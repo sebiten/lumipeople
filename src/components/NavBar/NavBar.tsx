@@ -29,7 +29,7 @@ export const links = [
 ];
 export default function Navbar() {
   return (
-    <nav className=" p-2 sticky w-full top-0 drop-shadow-xl z-10">
+    <nav className=" bg-inherit p-2 sticky w-full top-0  z-10">
       <div className="max-w-6xl mx-auto flex justify-between  ">
         <div className="text-xl font-bold  grid place-content-center">
           <Link
@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link
               key={index}
               href={link.href}
-              className="hover:text-lumiorange"
+              className="hover:text-lumiorange text-lg"
               target={link.target || ""}
             >
               {link.icon ? link.icon : link.text}
