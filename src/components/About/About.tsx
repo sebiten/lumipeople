@@ -10,7 +10,7 @@ interface IAboutProps {}
 
 export default function About() {
   return (
-    <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]  mt-48">
+    <section className= "overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center justify-between -mx-4">
           <div className="w-full px-4 lg:w-6/12">
@@ -617,7 +617,7 @@ export default function About() {
               <span className="block text-lumiorange mb-4 text-lg font-semibold ">
                 ¿Por qué elegirnos?
               </span>
-              <h2 className="mb-5 text-3xl font-bold  sm:text-[40px]/[48px]">
+              <h2 className="mb-5 text-3xl font-bold ">
                 Haz felices a tus clientes ofreciendo servicios.
               </h2>
               <p className="mb-5 text-base ">

@@ -1,3 +1,4 @@
+import Noticias from '@/components/Noticias/Noticias';
 import React from 'react';
 
 interface IpageProps {}
@@ -5,7 +6,7 @@ interface IpageProps {}
 export default function page() {
    return (
        <div>
-           <h1>page</h1>
+           <Noticias/>
        </div>
    );
 }

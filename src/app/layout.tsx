@@ -3,6 +3,7 @@ import { Archivo_Narrow } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Archivo_Narrow({
   subsets: ["latin"],
@@ -30,12 +31,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
-          <main> {children}</main>
+          <main className="overflow-hidden"> {children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

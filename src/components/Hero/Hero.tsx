@@ -5,14 +5,17 @@ import { BsPersonWorkspace } from "react-icons/bs";
 
 const Hero = () => {
   return (
-    <div className="block h-full sm:flex w-full mx-auto items-center justify-center">
-      <div className="flex flex-col sm:flex-row justify-center items-center w-full sm:w-3/4 m,mx-auto">
-        <div className="relative w-full max-w-lg mr-8 sm:mr-0 z-50">
-          <div className="absolute top-10 -left-80 w-72 h-72 bg-lumigray rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob"></div>
-          <div className="absolute -top-0 right-80 w-72 h-64 bg-lumiblue rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute -top-52 -left-72 w-72 h-72 bg-lumiorange rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-4000"></div>
+    <div className="block h-full sm:flex w-full mx-auto items-center justify-center mb-20">
+      <div className="flex flex-col sm:flex-row justify-center items-center w-full sm:w-3/4 mx-auto">
+        {/* Animación izquierda */}
+        <div className="relative w-full max-w-lg mr-8 sm:mr-0 z-50 hidden lg:block">
+          <div className="absolute top-10 -left-1/2 md:-left-72 w-56 h-56 bg-lumigray rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob"></div>
+          <div className="absolute -top-24 md:-left-96 w-56 h-56 bg-lumiblue rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-2000"></div>
+          <div className="absolute -top-24 -left-1/3 md:-left-60 w-56 h-56 bg-lumiorange rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-4000"></div>
         </div>
-        <div className="sm:text-left max-w-xl mx-auto flex flex-col smÑmr-20">
+
+        {/* Contenido principal */}
+        <div className="sm:text-left max-w-xl mx-auto flex flex-col sm:mr-20">
           <div className=" w-full flex flex-col items-center justify-center">
             <img
               className="w-[550px] h-96 mx-auto object-cover"
@@ -37,10 +40,15 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        <div className="relative z-50 w-full sm:w-3/4 ">
-        <div className="absolute top-10 left-48  w-64 h-64 bg-lumigray rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob"></div>
-          <div className="absolute top-52  left-48 w-64 h-64 bg-lumiblue rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute top-52  w-64 h-64  bg-lumiorange rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-4000"></div>
+
+        {/* Animación derecha */}
+        <div
+          id="right-animation"
+          className="relative w-full max-w-lg ml-8 sm:mr-0 z-50 hidden lg:block"
+        >
+          <div className="absolute top-10 md:left-1/2 w-56 h-56 bg-lumigray rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob"></div>
+          <div className="absolute -top-24 md:left-60 w-56 h-56 bg-lumiblue rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-2000"></div>
+          <div className="absolute -top-24 md:left-1/3 w-56 h-56 bg-lumiorange rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-4000"></div>
         </div>
       </div>
     </div>
