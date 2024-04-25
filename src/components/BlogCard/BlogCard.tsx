@@ -8,10 +8,11 @@ interface IBlogCardProps {
 
 const BlogCard: React.FC<IBlogCardProps> = ({ imgSrc, title, text }) => {
   return (
-    <article className="relative max-w-lg overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+    <article className="relative max-w-lg overflow-hidden rounded-lg shadow  transition hover:shadow-lg mt-4 md:mt-4 lg:m-0">
       <img
         alt=""
         src={imgSrc}
+        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
 

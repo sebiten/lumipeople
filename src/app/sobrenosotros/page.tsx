@@ -20,27 +20,29 @@ export default function page() {
               />
             </div>
             <div className="md:7/12 lg:w-6/12">
-              <h2 className="text-2xl text-lumiorange font-bold md:text-4xl">
-                ¿Quienes Somos?
-              </h2>
-              <p className="mt-6 ">
-                Lumi People es una empresa integrada por un gran equipo de
-                profesionales especializados en el área de Recursos Humanos con
-                distintas nacionalidades, para brindar atención en el mismo
-                idioma de nuestros clientes. Contamos con 19 años de experiencia
-                en México, con el objetivo de fomentar el desarrollo y
-                suministro de servicios que permitan a nuestros clientes
-                encontrar soluciones innovadoras y eficientes a sus problemas de
-                Capital Humano y en la planeación de recursos humanos. Nuestra
-                meta es obtener la satisfacción total de nuestros clientes con
-                nuestros servicios personalizados, buscando posicionarnos en
-                todo el continente Americano y posteriormente a nivel mundial
-              </p>
+              <div className="mx-auto max-w-screen-sm  mb-8 lg:mb-16">
+                <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-lumiorange">
+                  ¿Quienes Somos?
+                </h2>
+                <p className="font-light  lg:mb-16 sm:text-xl text-start">
+                  Lumi People es una empresa integrada por un gran equipo de
+                  profesionales especializados en el área de Recursos Humanos
+                  con distintas nacionalidades, para brindar atención en el
+                  mismo idioma de nuestros clientes. Contamos con 19 años de
+                  experiencia en México, con el objetivo de fomentar el
+                  desarrollo y suministro de servicios que permitan a nuestros
+                  clientes encontrar soluciones innovadoras y eficientes a sus
+                  problemas de Capital Humano y en la planeación de recursos
+                  humanos. Nuestra meta es obtener la satisfacción total de
+                  nuestros clientes con nuestros servicios personalizados,
+                  buscando posicionarnos en todo el continente Americano y
+                  posteriormente a nivel mundial
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <Equipo />
       <About />
     </div>
   );

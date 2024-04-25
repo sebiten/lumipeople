@@ -31,55 +31,61 @@ export const links = [
 ];
 export default function Navbar() {
   return (
-    <nav className="bg-inherit max-w-7xl mx-auto p-2 sticky top-0 z-50 flex flex-wrap justify-between items-center md:flex-nowrap">
-      <div className="">
-        <Link
-          target="_parent"
-          href="/"
-          className="text-xl font-bold text-center font-title uppercase no-underline text-inherit md:pl-0"
-        >
-          <img className="w-28 h-28 mx-auto" src="/lumipeople.png" alt="Logo" />
-        </Link>
-      </div>
-      <div className="flex items-center justify-end md:order-1 gap-2">
-        <ModeToggle />
-
-        <ul className="hidden md:flex flex-row gap-4 list-none pl-4">
-          {links.map((link, index) => (
-            <li key={index} className="text-lg hover:text-lumiorange">
-              <Link href={link.href} target={link.target || ""}>
-                {link.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center justify-between md:hidden gap-2">
-          {/* Dropdown Menu for mobile */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">
-                <GiHamburgerMenu />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              {links.map((link, index) => (
-                <Link key={index} href={link.href} target={link.target || ""}>
-                  <DropdownMenuLabel className="text-lg hover:text-lumiorange py-2 px-4">
-                    {link.text}
-                  </DropdownMenuLabel>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+    <nav className="bg-inherit max-w-full mx-auto p-2 sticky top-0 z-50 ">
+      <div className="max-w-7xl flex flex-wrap justify-between items-center md:flex-nowrap mx-auto">
+        <div className="">
+          <Link
+            target="_parent"
+            href="/"
+            className="text-xl font-bold text-center font-title uppercase no-underline text-inherit md:pl-0"
+          >
+            <img
+              className="w-28 h-28 mx-auto"
+              src="/lumipeople.png"
+              alt="Logo"
+            />
+          </Link>
         </div>
-        <div className="flex gap-2 ">
-          <Link href="/pedidos" className="hover:text-lumiorange">
-            <FaInstagram size={22} />
-          </Link>
-          <Link href="/pedidos" className="hover:text-lumiorange">
-            <FaLinkedin size={22} />
-          </Link>
+        <div className="flex items-center justify-end md:order-1 gap-2">
+          <ModeToggle />
+
+          <ul className="hidden md:flex flex-row gap-4 list-none pl-4">
+            {links.map((link, index) => (
+              <li key={index} className="text-lg hover:text-lumiorange">
+                <Link href={link.href} target={link.target || ""}>
+                  {link.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center justify-between md:hidden gap-2">
+            {/* Dropdown Menu for mobile */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline">
+                  <GiHamburgerMenu />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                {links.map((link, index) => (
+                  <Link key={index} href={link.href} target={link.target || ""}>
+                    <DropdownMenuLabel className="text-lg hover:text-lumiorange py-2 px-4">
+                      {link.text}
+                    </DropdownMenuLabel>
+                  </Link>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          <div className="flex gap-2 ">
+            <Link href="/pedidos" className="hover:text-lumiorange">
+              <FaInstagram size={22} />
+            </Link>
+            <Link href="/pedidos" className="hover:text-lumiorange">
+              <FaLinkedin size={22} />
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

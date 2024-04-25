@@ -31,9 +31,10 @@ const Servicios = () => {
     <section className="w-full mx-auto my-16">
       <div className="w-full mx-auto px-6 sm:px-10 lg:px-2">
         <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
+          <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b">
             {" "}
             Nuestros servicios
+            <hr className="border-b border-lumiblue border-dotted mt-2" />
           </h2>
           <p className="font-light  lg:mb-10 sm:text-xl ">
             Ofrecemos una amplia gama de servicios diseñados para satisfacer tus

@@ -5,6 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { FcStart } from "react-icons/fc";
 import { MdStart } from "react-icons/md";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 interface IAboutProps {}
 
@@ -21,6 +22,7 @@ export default function About() {
                     src="https://i.ibb.co/gFb3ns6/image-1.jpg"
                     alt=""
                     className="w-full rounded-2xl"
+                    loading="lazy"
                   />
                 </div>
                 <div className="py-3 sm:py-4">
@@ -37,6 +39,7 @@ export default function About() {
                     src="https://i.ibb.co/9y7nYCD/image-3.jpg"
                     alt=""
                     className="w-full rounded-2xl"
+                    loading="lazy"
                   />
                   <span className="absolute -right-7 -bottom-7 z-[-1]">
                     <svg
@@ -632,7 +635,7 @@ export default function About() {
                 un nombre de dominio que coincida con tu negocio.
               </p>
               <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
-                Empezar <MdStart className="text-lumiblue" />
+                Empezar <FaArrowRightToBracket className="text-lumiblue" />
               </Button>
             </div>
           </div>

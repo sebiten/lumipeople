@@ -18,6 +18,7 @@ export default function OpenPositions() {
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
             ¿Quieres Trabajar con Nosotros?
+            <hr className="border-b border-lumiblue border-dotted mt-2"/>
           </h2>
           <p className="font-light  lg:mb-16 sm:text-xl ">
             ¡Únete a nuestro equipo y sé parte de algo increíble! Estamos en
@@ -28,35 +29,35 @@ export default function OpenPositions() {
         <div className="grid grid-cols-2 sm:flex sm:gap-6 sm:justify-center sm:items-center">
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaBriefcase className="text-4xl text-lumiorange" />
+              <FaBriefcase size={80} className="text-4xl text-lumiorange" />
             </div>
-            <h3 className="text-xl  mt-4">Oportunidades de carrera</h3>
+            <h3 className="text-xl  mt-4">Oportunidades</h3>
 
           </div>
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaLaptop className="text-4xl text-lumiorange" />
+              <FaLaptop size={80} className="text-4xl text-lumiorange" />
             </div>
             <h3 className="text-xl  mt-4">Flexibilidad</h3>
 
           </div>
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaUserFriends className="text-4xl text-lumiorange" />
+              <FaUserFriends size={80} className="text-4xl text-lumiorange" />
             </div>
             <h3 className="text-xl  mt-4">Equipo increíble</h3>
           </div>
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaHandsHelping className="text-4xl text-lumiorange" />
+              <FaHandsHelping size={80} className="text-4xl text-lumiorange" />
             </div>
             <h3 className="text-xl  mt-4">Impacto positivo</h3>
 
           </div>
         </div>
-        <Button className="flex gap-2 font-bold text-lg mx-auto my-10 bg-lumiorange shadow-xl">
+        <Button className="flex gap-2  font-bold text-lg mx-auto my-10 bg-lumiorange shadow-xl">
           Ver Posiciones Abiertas!{" "}
-          <BsPersonWorkspace className="text-lumiblue" />
+          <BsPersonWorkspace  className="text-lumiblue" />
         </Button>
       </div>
     </div>
