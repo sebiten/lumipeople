@@ -1,4 +1,5 @@
 import React from "react";
+import { RiTeamFill } from "react-icons/ri";
 
 interface IEquipoProps {}
 
@@ -8,7 +9,7 @@ export default function Equipo() {
       <div className="py-8 px-4 mx-auto max-w-7xl lg:py-16 lg:px-6 ">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b ">
-            Nuestro Equipo
+            Nuestro Equipo <RiTeamFill className="inline-block"/>
             <hr className="border-b border-lumiorange border-dotted mt-2" />
           </h2>
           <p className="font-light  lg:mb-16 sm:text-xl ">

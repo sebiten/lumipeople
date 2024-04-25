@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
+import { RiTeamFill } from "react-icons/ri";
+import { FaHandshakeAngle, FaServicestack } from "react-icons/fa6";
+import { MdWork } from "react-icons/md";
 
 const Servicios = () => {
   const servicios = [
@@ -33,7 +36,7 @@ const Servicios = () => {
         <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b">
             {" "}
-            Nuestros servicios
+            Nuestros servicios <MdWork className="inline-block" />
             <hr className="border-b border-lumiblue border-dotted mt-2" />
           </h2>
           <p className="font-light  lg:mb-10 sm:text-xl ">

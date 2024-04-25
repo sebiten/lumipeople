@@ -9,6 +9,7 @@ import {
 import { TiArrowRight } from "react-icons/ti";
 import { Button } from "../ui/button";
 import { BsPersonWorkspace } from "react-icons/bs";
+import { GrWorkshop } from "react-icons/gr";
 interface IOpenPositionsProps {}
 
 export default function OpenPositions() {
@@ -17,7 +18,7 @@ export default function OpenPositions() {
       <div className="mx-auto  text-center px-4 lg:px-8">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
-            ¿Quieres Trabajar con Nosotros?
+            ¿Quieres Trabajar con Nosotros? <GrWorkshop className="inline-block" />
             <hr className="border-b border-lumiblue border-dotted mt-2"/>
           </h2>
           <p className="font-light  lg:mb-16 sm:text-xl ">

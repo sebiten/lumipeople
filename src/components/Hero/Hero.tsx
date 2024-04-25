@@ -47,7 +47,7 @@ const Hero = () => {
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="relative w-full max-w-lg mr-8 sm:mr-0 z-50 hidden lg:block"
+        className="relative w-full max-w-lg mr-8 sm:mr-0 z-30 hidden lg:block"
       >
         <div className="absolute top-10 -left-1/2 md:-left-10 w-56 h-56 bg-lumigray rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob"></div>
         <div className="absolute -top-24 md:-left-40 w-56 h-56 bg-lumiblue rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-2000"></div>
@@ -91,7 +91,7 @@ const Hero = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="relative w-full max-w-lg ml-8 sm:mr-0 z-50 hidden lg:block"
+        className="relative w-full max-w-lg ml-8 sm:mr-0 z-30 hidden lg:block"
       >
         <div className="absolute top-10 md:left-1/2 w-56 h-56 bg-lumigray rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob"></div>
         <div className="absolute -top-24 md:left-60 w-56 h-56 bg-lumiblue rounded-full mix-blend-multiply filter blur-xl opacity-0 md:opacity-70 animate-blob animation-delay-2000"></div>

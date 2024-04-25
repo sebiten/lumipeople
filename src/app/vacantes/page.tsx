@@ -1,10 +1,11 @@
+"use client";
 import About from "@/components/About/About";
 import Equipo from "@/components/Equipo/Equipo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { VacancyCard } from "@/components/VacantesCard/Vacantes";
-import React from "react";
-
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 const vacante = [
   {
     titulo: "Desarrollador Web",
@@ -23,7 +24,7 @@ const vacante = [
     fecha: "17 Diciembre 2024",
   },
   {
-    titulo: "Diseñador Gráfico",
+    titulo: "Operador Gráfico",
     localidad: "Barcelona, España",
     descripcion:
       "Buscamos un diseñador gráfico creativo y apasionado para trabajar en proyectos emocionantes.",
@@ -42,8 +43,14 @@ const vacante = [
 ];
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
-    <div className="min-h-screen max-w-7xl mx-auto py-8">
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen max-w-7xl mx-auto py-8"
+    >
       <hr className="w-fit" />
       <div className="max-w-7xl mx-auto">
         <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
@@ -56,17 +63,26 @@ function App() {
           </p>
         </div>
         <form className="flex my-4">
-          <Input placeholder="Buscar puesto" type="text" />
+          <Input
+            placeholder="Buscar puesto"
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <Button>Buscar</Button>
         </form>
         <div className="flex flex-col">
-          {vacante.map((vacante, index) => (
-            <VacancyCard key={index} vacante={vacante} />
-          ))}
+          {vacante
+            .filter((vacante) =>
+              vacante.titulo.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((vacante, index) => (
+              <VacancyCard key={index} vacante={vacante} />
+            ))}
         </div>
       </div>
       <Equipo />
-    </div>
+    </motion.div>
   );
 }
 

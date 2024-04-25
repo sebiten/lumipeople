@@ -5,7 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { FcStart } from "react-icons/fc";
 import { MdStart } from "react-icons/md";
-import { FaArrowRightToBracket } from "react-icons/fa6";
+import { FaArrowRightToBracket, FaHandshakeAngle } from "react-icons/fa6";
 
 interface IAboutProps {}
 
@@ -617,8 +617,8 @@ export default function About() {
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="mt-10 lg:mt-0">
-              <span className="block text-lumiorange mb-4 text-lg font-semibold ">
-                ¿Por qué elegirnos?
+              <span className="block text-lumiorange mb-4 text-xl font-semibold ">
+                ¿Por qué elegirnos? <FaHandshakeAngle className="inline-block" />
               </span>
               <h2 className="mb-5 text-3xl font-bold ">
                 Haz felices a tus clientes ofreciendo servicios.
