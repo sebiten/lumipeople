@@ -635,7 +635,7 @@ export default function About() {
                 un nombre de dominio que coincida con tu negocio.
               </p>
               <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
-                Empezar <FaArrowRightToBracket className="text-lumiblue" />
+                Saber más <FaArrowRightToBracket className="text-lumiblue" />
               </Button>
             </div>
           </div>

@@ -36,7 +36,7 @@ const Servicios = () => {
         <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b">
             {" "}
-            Nuestros servicios <MdWork className="inline-block" />
+            Nuestros servicios <MdWork className="inline-block text-lumiorange" />
             <hr className="border-b border-lumiblue border-dotted mt-2" />
           </h2>
           <p className="font-light  lg:mb-10 sm:text-xl ">
