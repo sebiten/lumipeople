@@ -5,11 +5,11 @@ interface IEquipoProps {}
 
 export default function Equipo() {
   return (
-    <section className="">
-      <div className="py-8 px-4 mx-auto max-w-7xl lg:py-16 lg:px-6 ">
+    <section >
+      <div className="py-8 px-4 mx-auto max-w-7xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b ">
-            Nuestro Equipo <RiTeamFill className="inline-block"/>
+          <h2 className="mb-4 mt-10 text-3xl tracking-tight font-extrabold border-b ">
+            Nuestro Equipo <RiTeamFill className="inline-block text-lumiorange" />
             <hr className="border-b border-lumiorange border-dotted mt-2" />
           </h2>
           <p className="font-light  lg:mb-16 sm:text-xl ">

@@ -14,7 +14,7 @@ interface IOpenPositionsProps {}
 
 export default function OpenPositions() {
   return (
-    <div className="pb-14 my-10">
+    <div className="pb-14 my-12 shadow-lg max-w-7xl mx-auto">
       <div className="mx-auto  text-center px-4 lg:px-8">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
@@ -27,30 +27,30 @@ export default function OpenPositions() {
             nuestro crecimiento y éxito.
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:flex sm:gap-6 sm:justify-center sm:items-center">
+        <div className="grid grid-cols-2 sm:flex sm:gap-10 sm:justify-center sm:items-center">
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaBriefcase size={80} className="text-4xl text-lumiorange" />
+              <FaBriefcase size={80} className="text-4xl text-lumiblue" />
             </div>
             <h3 className="text-xl  mt-4">Oportunidades</h3>
 
           </div>
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaLaptop size={80} className="text-4xl text-lumiorange" />
+              <FaLaptop size={80} className="text-4xl text-lumiblue" />
             </div>
             <h3 className="text-xl  mt-4">Flexibilidad</h3>
 
           </div>
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaUserFriends size={80} className="text-4xl text-lumiorange" />
+              <FaUserFriends size={80} className="text-4xl text-lumiblue" />
             </div>
             <h3 className="text-xl  mt-4">Equipo increíble</h3>
           </div>
           <div className="flex flex-col items-center">
             <div className="rounded-full p-4 shadow-lg">
-              <FaHandsHelping size={80} className="text-4xl text-lumiorange" />
+              <FaHandsHelping size={80} className="text-4xl text-lumiblue" />
             </div>
             <h3 className="text-xl  mt-4">Impacto positivo</h3>
 

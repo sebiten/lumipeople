@@ -1,9 +1,21 @@
 import React from "react";
 import Image from "next/image";
-import { FaCheck } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaCheck,
+  FaHandsHelping,
+  FaLaptop,
+  FaMedal,
+  FaSprayCan,
+  FaUserFriends,
+  FaUserGraduate,
+} from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import { FaHandshakeAngle, FaServicestack } from "react-icons/fa6";
 import { MdWork } from "react-icons/md";
+import { Button } from "../ui/button";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { HiMiniPencilSquare } from "react-icons/hi2";
 
 const Servicios = () => {
   const servicios = [
@@ -36,13 +48,39 @@ const Servicios = () => {
         <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b">
             {" "}
-            Nuestros servicios <MdWork className="inline-block text-lumiorange" />
+            Nuestros servicios{" "}
+            <MdWork className="inline-block text-lumiorange" />
             <hr className="border-b border-lumiblue border-dotted mt-2" />
           </h2>
           <p className="font-light  lg:mb-10 sm:text-xl ">
             Ofrecemos una amplia gama de servicios diseñados para satisfacer tus
             necesidades y superar tus expectativas.
           </p>
+        </div>
+
+        <div className="rounded-lg shadow-lg p-6">
+          <div className="flex justify-center mb-4">
+            <Image
+              alt="rrhh"
+              src="/rrhh.webp"
+              width={1920}
+              height={1080}
+              className="object-cover w-full h-96 rounded-lg mx-auto "
+            />
+          </div>
+          <h3 className=" text-center text-2xl mb-2 text-lumiorange uppercase font-bold">
+            Recursos Humanos
+          </h3>
+          <p className="text-center text-lg mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            tenetur alias repudiandae doloribus ipsum modi quos aperiam, quidem
+            amet architecto exercitationem recusandae enim error, tempore
+            voluptatibus laudantium perspiciatis, neque consequatur.
+          </p>
+          <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl mx-auto">
+            ¡Obtén una cotización ahora!{" "}
+            <HiMiniPencilSquare className="text-lumiblue" />
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

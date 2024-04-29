@@ -21,7 +21,7 @@ export default function About() {
                   <img
                     src="https://i.ibb.co/gFb3ns6/image-1.jpg"
                     alt=""
-                    className="w-full rounded-2xl"
+                    className="w-full rounded-2xl shadow-lg"
                     loading="lazy"
                   />
                 </div>
@@ -29,7 +29,7 @@ export default function About() {
                   <img
                     src="https://i.ibb.co/rfHFq15/image-2.jpg"
                     alt=""
-                    className="w-full rounded-2xl"
+                    className="w-full rounded-2xl shadow-lg"
                   />
                 </div>
               </div>
@@ -38,7 +38,7 @@ export default function About() {
                   <img
                     src="https://i.ibb.co/9y7nYCD/image-3.jpg"
                     alt=""
-                    className="w-full rounded-2xl"
+                    className="w-full rounded-2xl shadow-lg"
                     loading="lazy"
                   />
                   <span className="absolute -right-7 -bottom-7 z-[-1]">
@@ -617,8 +617,8 @@ export default function About() {
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="mt-10 lg:mt-0">
-              <span className="block text-lumiorange mb-4 text-xl font-semibold ">
-                ¿Por qué elegirnos? <FaHandshakeAngle className="inline-block" />
+              <span className="block text-lumiorange mb-4 text-3xl font-semibold ">
+                ¿Por qué elegirnos? <FaHandshakeAngle size={35} className="inline-block" />
               </span>
               <h2 className="mb-5 text-3xl font-bold ">
                 Haz felices a tus clientes ofreciendo servicios.
