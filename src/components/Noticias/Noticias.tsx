@@ -90,6 +90,13 @@ export default function Noticias() {
             text="aprende como armar tu curriculum con expertos en el tema!"
           />
         </div>
+        <div className="relative">
+          <BlogCard
+            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            title="Como armar tu cv"
+            text="aprende como armar tu curriculum con expertos en el tema!"
+          />
+        </div>
       </section>
       <section className="grid grid-cols-3 container mx-auto gap-4 p-4 font-bold">
         <div className="relative">

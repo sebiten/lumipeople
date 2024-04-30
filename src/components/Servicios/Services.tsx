@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import {
@@ -16,6 +17,7 @@ import { MdWork } from "react-icons/md";
 import { Button } from "../ui/button";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { HiMiniPencilSquare } from "react-icons/hi2";
+import { motion } from "framer-motion";
 
 const Servicios = () => {
   const servicios = [
@@ -44,7 +46,12 @@ const Servicios = () => {
 
   return (
     <section className="w-full mx-auto my-16">
-      <div className="w-full mx-auto px-6 sm:px-10 lg:px-2">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="w-full mx-auto px-6 sm:px-10 lg:px-2"
+      >
         <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b">
             {" "}
@@ -85,7 +92,13 @@ const Servicios = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicios.map((servicio) => (
-            <div key={servicio.id} className="rounded-lg shadow-lg p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              key={servicio.id}
+              className="rounded-lg shadow-lg p-6"
+            >
               <div className="flex justify-center mb-4">
                 <Image
                   src={servicio.icono}
@@ -113,10 +126,10 @@ const Servicios = () => {
                   de limpieza de alta calidad
                 </li>
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

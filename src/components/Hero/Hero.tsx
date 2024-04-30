@@ -5,6 +5,7 @@ import {
   FaFacebookSquare,
   FaFolderMinus,
   FaInstagramSquare,
+  FaLinkedin,
   FaPhone,
   FaTwitterSquare,
 } from "react-icons/fa";
@@ -15,6 +16,7 @@ import {
 } from "react-icons/io";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -32,7 +34,7 @@ const Hero = () => {
         </a>
         <a href="#" className="text-lumiblue hover:text-lumiorange">
           <motion.div whileHover={{ scale: 1.2 }}>
-            <FaTwitterSquare className="text-3xl" />
+            <FaLinkedin className="text-3xl" />
           </motion.div>
         </a>
         <a href="#" className="text-lumiblue hover:text-lumiorange">
@@ -72,14 +74,18 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex gap-2  justify-center items-center sm:justify-center">
-          <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl">
-            ¿Quienes somos?{" "}
-            <IoMdInformationCircleOutline className="text-lumiblue" />
-          </Button>
-          <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl">
-            Trabaja con nosotros!{" "}
-            <BsPersonWorkspace className="text-lumiblue" />
-          </Button>
+          <Link href="/sobrenosotros">
+            <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl">
+              ¿Quienes somos?{" "}
+              <IoMdInformationCircleOutline className="text-lumiblue" />
+            </Button>
+          </Link>
+          <Link href="/vacantes">
+            <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl">
+              Trabaja con nosotros!{" "}
+              <BsPersonWorkspace className="text-lumiblue" />
+            </Button>
+          </Link>
         </div>
       </div>
 

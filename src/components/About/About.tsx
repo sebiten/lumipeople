@@ -6,12 +6,11 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import { FcStart } from "react-icons/fc";
 import { MdStart } from "react-icons/md";
 import { FaArrowRightToBracket, FaHandshakeAngle } from "react-icons/fa6";
-
 interface IAboutProps {}
 
 export default function About() {
   return (
-    <section className= "overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+    <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center justify-between -mx-4">
           <div className="w-full px-4 lg:w-6/12">
@@ -618,7 +617,8 @@ export default function About() {
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="mt-10 lg:mt-0">
               <span className="block text-lumiorange mb-4 text-3xl font-semibold ">
-                ¿Por qué elegirnos? <FaHandshakeAngle size={35} className="inline-block" />
+                ¿Por qué elegirnos?{" "}
+                <FaHandshakeAngle size={35} className="inline-block" />
               </span>
               <h2 className="mb-5 text-3xl font-bold ">
                 Haz felices a tus clientes ofreciendo servicios.
