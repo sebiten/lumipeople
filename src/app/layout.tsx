@@ -11,7 +11,7 @@ const inter = Archivo_Narrow({
 });
 
 export const metadata: Metadata = {
-  title: "Lumi People",
+  title: "Lumi People AR",
   keywords:
     "Recursos Humanos, soluciones innovadoras, atención personalizada, desarrollo de recursos humanos, servicios eficientes, capital humano, planeación de recursos humanos, satisfacción del cliente, integración de equipos, experiencia internacional.",
   description:

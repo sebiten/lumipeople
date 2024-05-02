@@ -8,6 +8,9 @@ import { MdStart } from "react-icons/md";
 import { FaArrowRightToBracket, FaHandshakeAngle } from "react-icons/fa6";
 interface IAboutProps {}
 
+// cotizar servicios 1 2 y 4
+
+
 export default function About() {
   return (
     <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">

@@ -26,21 +26,42 @@ const Servicios = () => {
       nombre: "Estrategias de marketing digital",
       descripcion:
         "Creamos estrategias personalizadas de marketing digital para potenciar tu presencia en línea y alcanzar tus objetivos comerciales.",
-      icono: "https://i.ibb.co/gFb3ns6/image-1.jpg",
+      icono: "/HeadHunting.jpg",
     },
     {
       id: 2,
       nombre: "Gestión de redes sociales",
       descripcion:
         "Gestionamos tus redes sociales para aumentar tu visibilidad, interactuar con tu audiencia y generar leads cualificados.",
-      icono: "https://i.ibb.co/rfHFq15/image-2.jpg",
+      icono: "/Outsourcing.jpg",
     },
     {
       id: 3,
       nombre: "Desarrollo de contenido",
       descripcion:
         "Creamos contenido relevante y atractivo para tu marca, desde publicaciones en blogs hasta videos promocionales, para conectar con tu audiencia.",
-      icono: "https://i.ibb.co/rfHFq15/image-2.jpg",
+      icono: "/admcamp.jpg",
+    },
+    {
+      id: 1,
+      nombre: "Estrategias de marketing digital",
+      descripcion:
+        "Creamos estrategias personalizadas de marketing digital para potenciar tu presencia en línea y alcanzar tus objetivos comerciales.",
+      icono: "/Logistica.jpg",
+    },
+    {
+      id: 2,
+      nombre: "Gestión de redes sociales",
+      descripcion:
+        "Gestionamos tus redes sociales para aumentar tu visibilidad, interactuar con tu audiencia y generar leads cualificados.",
+      icono: "/RRHH.jpg",
+    },
+    {
+      id: 3,
+      nombre: "Desarrollo de contenido",
+      descripcion:
+        "Creamos contenido relevante y atractivo para tu marca, desde publicaciones en blogs hasta videos promocionales, para conectar con tu audiencia.",
+      icono: "/alqmaq.jpg",
     },
   ];
 
@@ -64,7 +85,7 @@ const Servicios = () => {
             necesidades y superar tus expectativas.
           </p>
         </div>
-
+{/*
         <div className="rounded-lg shadow-lg p-6">
           <div className="flex justify-center mb-4">
             <Image
@@ -88,7 +109,7 @@ const Servicios = () => {
             ¡Obtén una cotización ahora!{" "}
             <HiMiniPencilSquare className="text-lumiblue" />
           </Button>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicios.map((servicio) => (
@@ -105,7 +126,7 @@ const Servicios = () => {
                   alt={servicio.nombre}
                   width={400}
                   height={400}
-                  className="object-cover rounded-lg mx-auto "
+                  className="object-cover w-96 h-96 rounded-lg mx-auto "
                 />
               </div>
               <h3 className="text-xl mb-2 text-lumiorange uppercase">
@@ -129,6 +150,7 @@ const Servicios = () => {
             </motion.div>
           ))}
         </div>
+
       </motion.div>
     </section>
   );

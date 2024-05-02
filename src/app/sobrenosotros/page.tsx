@@ -12,7 +12,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-
+ // principal ancha
+ // foto de lumipeople abril
 const images = [
   "/lumipeople.png",
   "/lumipeople.png",
@@ -34,7 +35,7 @@ export default function page() {
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+                src="/About.jpg"
                 alt="image"
                 loading="lazy"
                 width=""
@@ -73,6 +74,7 @@ export default function page() {
           </div>
         </div>
       </div>
+      <h3 className="text-center text-lg font-bold">Empresas con la que colaboramos</h3>
       <Carousel
         opts={{ align: "start", loop: true }}
         plugins={[plugin.current]}
