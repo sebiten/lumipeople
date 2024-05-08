@@ -27,21 +27,21 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="absolute -bottom-44 -left-72  gap-4 flex flex-col"
       >
-        <a href="#" className="text-lumiblue hover:text-lumiorange">
+        <Link  target="_blank" href="https://www.facebook.com/lumipeople" className="text-lumiblue hover:text-lumiorange">
           <motion.div whileHover={{ scale: 1.2 }}>
             <FaFacebookSquare className="text-3xl" />
           </motion.div>
-        </a>
-        <a href="#" className="text-lumiblue hover:text-lumiorange">
+        </Link>
+        <Link  target="_blank" href="https://ar.linkedin.com/company/lumi-people-ar" className="text-lumiblue hover:text-lumiorange">
           <motion.div whileHover={{ scale: 1.2 }}>
             <FaLinkedin className="text-3xl" />
           </motion.div>
-        </a>
-        <a href="#" className="text-lumiblue hover:text-lumiorange">
+        </Link>
+        <Link  target="_blank" href="https://www.instagram.com/lumipeople.ar/" className="text-lumiblue hover:text-lumiorange">
           <motion.div whileHover={{ scale: 1.2 }}>
             <FaInstagramSquare className="text-3xl" />
           </motion.div>
-        </a>
+        </Link>
       </motion.div>
 
       {/* Animación izquierda */}

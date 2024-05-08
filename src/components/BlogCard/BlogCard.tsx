@@ -1,14 +1,17 @@
+import Link from "next/link";
 import React from "react";
 
 interface IBlogCardProps {
   imgSrc: string;
   title: string;
   text: string;
+  id: string;
 }
 
-const BlogCard: React.FC<IBlogCardProps> = ({ imgSrc, title, text }) => {
+const BlogCard: React.FC<IBlogCardProps> = ({ imgSrc, title, text, id }) => {
   return (
     <article className="relative max-w-lg overflow-hidden rounded-lg shadow  transition hover:shadow-lg mt-4 md:mt-4 lg:m-0">
+     <Link href={`/articulo/${id}`}>
       <img
         alt=""
         src={imgSrc}
@@ -25,6 +28,8 @@ const BlogCard: React.FC<IBlogCardProps> = ({ imgSrc, title, text }) => {
           <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">{text}</p>
         </div>
       </div>
+     </Link>
+
     </article>
   );
 };

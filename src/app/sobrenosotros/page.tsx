@@ -12,8 +12,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
- // principal ancha
- // foto de lumipeople abril
+import { Button } from "@/components/ui/button";
+import { FaArrowRightToBracket } from "react-icons/fa6";
+// principal ancha
+// foto de lumipeople abril
 const images = [
   "/lumipeople.png",
   "/lumipeople.png",
@@ -38,8 +40,7 @@ export default function page() {
                 src="/About.jpg"
                 alt="image"
                 loading="lazy"
-                width=""
-                height=""
+                className="rounded-2xl"
               />
             </div>
             <div className="md:7/12 lg:w-6/12">
@@ -54,7 +55,7 @@ export default function page() {
                   ¿Quienes Somos?
                 </motion.h2>
 
-                <motion.p className="font-light  lg:mb-16 sm:text-xl text-start">
+                <motion.p className="font-light  lg:mb-4 sm:text-xl text-start">
                   Lumi People es una empresa integrada por un gran equipo de
                   profesionales especializados en el área de Recursos Humanos
                   con distintas nacionalidades, para brindar atención en el
@@ -68,13 +69,18 @@ export default function page() {
                   buscando posicionarnos en todo el continente Americano y
                   posteriormente a nivel mundial
                 </motion.p>
-                <hr></hr>
+                <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
+                  Obtén tu presupuesto sin compromiso{" "}
+                  <FaArrowRightToBracket className="text-lumiblue" />
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h3 className="text-center text-lg font-bold">Empresas con la que colaboramos</h3>
+      <h3 className="text-center text-2xl font-bold text-lumigray mt-4">
+        Empresas con la que colaboramos
+      </h3>
       <Carousel
         opts={{ align: "start", loop: true }}
         plugins={[plugin.current]}
@@ -88,6 +94,8 @@ export default function page() {
                   src={image}
                   alt={`Image ${index + 1}`}
                   className="w-full h-full object-cover rounded-lg"
+                  loading="lazy"
+
                 />
               </div>
             </CarouselItem>

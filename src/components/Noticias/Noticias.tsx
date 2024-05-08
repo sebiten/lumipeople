@@ -1,9 +1,8 @@
-"use client"
+"use client";
 import React from "react";
 import BlogCard from "../BlogCard/BlogCard";
 import { motion } from "framer-motion";
-
-interface INoticiasProps {}
+import Link from "next/link";
 
 export default function Noticias() {
   return (
@@ -22,52 +21,74 @@ export default function Noticias() {
           ¡Bienvenido al Centro de Noticias de Lumi!
         </p>
       </div>
-
+      {/* Seccion de iframe con dos articulos al lado */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 container mx-auto gap-4 p-4 ">
         <div className="col-span-1 sm:col-span-2 lg:col-span-2 row-span-2 ">
           <div className="relative pt-[56.25%] overflow-hidden h-full">
             <iframe
               className="absolute inset-0 w-full h-full border-0"
-              src="https://www.youtube.com/embed/8VTb2votTM0"
+              src="https://www.youtube.com/embed/OCNI7nRCL-4?si=Aqs5j0c_5qq19mDT"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
-          {/* <div className="relative">
-            <h3 className="text-3xl mt-2 block">Lumi people Argentina</h3>
-            <p className="text-lg tigh mt-2 block ">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat
-              deleniti unde veritatis minus mollitia perferendis cum libero rem
-              esse porro provident fugit, blanditiis accusantium reprehenderit
-              facere ipsam ab modi nemo. Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit.
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat
-              deleniti unde veritatis minus mollitia perferendis cum libero rem
-              esse porro provident fugit, blanditiis accusantium reprehenderit
-              facere ipsam ab modi nemo. Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit.
-            </p>
-          </div> */}
         </div>
-
-        <div className="relative">
           <BlogCard
             imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             title="Como armar tu cv"
             text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
           />
-        </div>
 
-        <div className="relative">
           <BlogCard
             imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             title="Como armar tu cv"
             text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
+
           />
-        </div>
       </section>
-
+      {/* Articulos de mas abajo */}
       <section className="grid grid-cols-2 md:grid-cols-3  container mx-auto gap-4 p-4 font-bold">
+        <BlogCard
+          imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          title="Como armar tu cv"
+          text="aprende como armar tu curriculum con expertos en el tema!"
+          id="hola"
+        />
+
+          <BlogCard
+            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            title="Como armar tu cv"
+            text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
+          />
+          <BlogCard
+            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            title="Como armar tu cv"
+            text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
+          />
+          <BlogCard
+            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            title="Como armar tu cv"
+            text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
+          />
+          <BlogCard
+            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            title="Como armar tu cv"
+            text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
+          />
+          <BlogCard
+            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            title="Como armar tu cv"
+            text="aprende como armar tu curriculum con expertos en el tema!"
+            id="hola"
+          />
+      </section>
+      {/* <section className="grid grid-cols-3 container mx-auto gap-4 p-4 font-bold">
         <div className="relative">
           <BlogCard
             imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -90,38 +111,7 @@ export default function Noticias() {
             text="aprende como armar tu curriculum con expertos en el tema!"
           />
         </div>
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-      </section>
-      <section className="grid grid-cols-3 container mx-auto gap-4 p-4 font-bold">
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-      </section>
+      </section> */}
     </motion.div>
   );
 }

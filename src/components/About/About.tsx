@@ -10,7 +10,6 @@ interface IAboutProps {}
 
 // cotizar servicios 1 2 y 4
 
-
 export default function About() {
   return (
     <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
@@ -21,7 +20,7 @@ export default function About() {
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="py-3 sm:py-4">
                   <img
-                    src="https://i.ibb.co/gFb3ns6/image-1.jpg"
+                    src="/cotizarservicios1.jpg"
                     alt=""
                     className="w-full rounded-2xl shadow-lg"
                     loading="lazy"
@@ -29,16 +28,17 @@ export default function About() {
                 </div>
                 <div className="py-3 sm:py-4">
                   <img
-                    src="https://i.ibb.co/rfHFq15/image-2.jpg"
+                    src="cotizarservicios2.jpg"
                     alt=""
                     className="w-full rounded-2xl shadow-lg"
+                    loading="lazy"
                   />
                 </div>
               </div>
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="relative z-10 my-4">
                   <img
-                    src="https://i.ibb.co/9y7nYCD/image-3.jpg"
+                    src="cotizarservicios3.jpg"
                     alt=""
                     className="w-full rounded-2xl shadow-lg"
                     loading="lazy"
@@ -638,7 +638,8 @@ export default function About() {
                 un nombre de dominio que coincida con tu negocio.
               </p>
               <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
-                Saber más <FaArrowRightToBracket className="text-lumiblue" />
+                Obtén tu presupuesto sin compromiso{" "}
+                <FaArrowRightToBracket className="text-lumiblue" />
               </Button>
             </div>
           </div>

@@ -121,11 +121,12 @@ const Servicios = () => {
               className="rounded-lg shadow-lg p-6"
             >
               <div className="flex justify-center mb-4">
-                <Image
+                <img
                   src={servicio.icono}
                   alt={servicio.nombre}
                   width={400}
                   height={400}
+                  loading="lazy"
                   className="object-cover w-96 h-96 rounded-lg mx-auto "
                 />
               </div>

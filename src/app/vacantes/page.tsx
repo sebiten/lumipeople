@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { VacancyCard } from "@/components/VacantesCard/Vacantes";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { SlDocs } from "react-icons/sl";
 const vacante = [
   {
     titulo: "Desarrollador Web",
@@ -53,15 +55,32 @@ function App() {
     >
       <hr className="w-fit" />
       <div className="max-w-7xl mx-auto">
-        <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
-            {" "}
-            Vacantes disponibles!
-          </h2>
-          <p className="font-light  lg:mb-10 sm:text-xl ">
-            Construye tu futuro con nosotros. ¡Únete al equipo ahora!
-          </p>
+        <div className="mx-auto flex gap-10 max-w-7xl items-center justify-center w-full text-center mb-4 lg:mb-14">
+          <img
+            className="w-[600px] h-auto rounded-md"
+            loading="lazy"
+            width={1280}
+            height={720}
+            alt="Hiring"
+            src={"/cargatucv.jpg"}
+          />
+          <div className="text-start">
+            <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
+              {" "}
+              Vacantes disponibles!
+            </h2>
+
+            <p className="my-2 text-lg">
+              ¿No encuentras tu puesto ideal? No te preocupes, carga tu CV en
+              nuestra base de datos y te contactaremos cuando haya una posición
+              abierta que se ajuste a tu perfil.
+            </p>
+            <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl">
+              Carga tu Cv <SlDocs className="text-lumiblue" />
+            </Button>
+          </div>
         </div>
+
         <form className="flex my-4">
           <Input
             placeholder="Buscar puesto"

@@ -43,6 +43,8 @@ export default function Navbar() {
               className="w-28 h-28 mx-auto"
               src="/lumipeople.png"
               alt="Logo"
+              loading="lazy"
+
             />
           </Link>
         </div>
@@ -79,10 +81,10 @@ export default function Navbar() {
             </DropdownMenu>
           </div>
           <div className="flex gap-2 ">
-            <Link href="/pedidos" className="hover:text-lumiorange">
+            <Link  target="_blank" href="https://www.instagram.com/lumipeople.ar/" className="hover:text-lumiorange">
               <FaInstagram size={22} />
             </Link>
-            <Link href="/pedidos" className="hover:text-lumiorange">
+            <Link target="_blank" href="https://ar.linkedin.com/company/lumi-people-ar" className="hover:text-lumiorange">
               <FaLinkedin size={22} />
             </Link>
           </div>
