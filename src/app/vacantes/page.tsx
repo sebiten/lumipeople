@@ -102,7 +102,9 @@ function App() {
             ))}
         </div>
       </div>
-      <h2 className="text-2xl text-lumiblue font-bold my-10 text-center">Nuestras reclutadoras</h2>
+      <h2 className="text-2xl text-lumiblue font-bold my-10 text-center">
+        Nuestras reclutadoras
+      </h2>
       <div className="flex items-center justify-center">
         <div className="items-center rounded-lg shadow sm:flex">
           <a href="#">
@@ -115,13 +117,15 @@ function App() {
           </a>
           <div className="p-5">
             <h3 className="text-xl font-bold tracking-tight">
-              <p className="text-2xl">Maria Jose Ferreyra</p>
+              <p className="text-2xl">Maria Jose Ferreyra Gerik</p>
             </h3>
-            <span className="text-lumiorange text-lg">Reclutadora</span>
+            <span className="text-lumiorange text-lg">
+              Reclutamiento y selección
+            </span>
             <ul className="flex space-x-4 sm:mt-0">
               <Link
                 className="mt-2"
-                href="https://www.linkedin.com/in/mariano-gast%C3%B3n-nieva-32533442/"
+                href="https://www.linkedin.com/in/mariajosegerik/"
               >
                 <FaLinkedin size={24} />
               </Link>
@@ -140,11 +144,13 @@ function App() {
               <h3 className="text-xl font-bold tracking-tight">
                 <p className="text-2xl">Sofia Ocaña</p>
               </h3>
-              <span className="text-lumiorange text-lg">Reclutadora</span>
+              <span className="text-lumiorange text-lg">
+                Reclutamiento y selección
+              </span>
               <ul className="flex space-x-4 sm:mt-0">
                 <Link
                   className="mt-2"
-                  href="https://www.linkedin.com/in/mariano-gast%C3%B3n-nieva-32533442/"
+                  href="https://www.linkedin.com/in/sofia-oca%C3%B1a-800099b9/"
                 >
                   <FaLinkedin size={24} />
                 </Link>
