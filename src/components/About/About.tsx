@@ -640,7 +640,7 @@ export default function About() {
                 brindarles todas las soluciones relacionadas con su personal.
               </p>
               <Button className=" bg-lumiorange shadow-xl">
-                <Link className="flex gap-2 text-lg font-normal items-center justify-center" href="https://forms.gle/RNC5Ez2DrXbjcqsW6">
+                <Link target="_blank" className="flex gap-2 text-lg font-normal items-center justify-center" href="https://forms.gle/RNC5Ez2DrXbjcqsW6">
                   Obtén tu presupuesto!{" "}
                   <FaArrowRightToBracket className="text-lumiblue" />
                 </Link>

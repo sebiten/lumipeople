@@ -70,10 +70,10 @@ export default async function Post({ params: { postId } }: Props) {
   return (
     <div className="prose max-w-4xl mx-auto">
       <hr className="mt-10"></hr>
-      <h1 className="text-4xl mt-4 mb-0">{meta.title}</h1>{" "}
+      <h1 className="text-4xl mt-4 mb-0 text-lumiorange">{meta.title}</h1>{" "}
       {/* Use h1 for the title */}
       <p className="mt-2 text-sm">{pubDate}</p>
-      <article className="prose-a:text-lumiblue text-lg">{content}</article>
+      <article className="prose-a:text-lumiorange prose-strong:text-lumiorange prose-p:dark:text-white  prose-p:text-black text-lg prose-li:dark:text-lumigray">{content}</article>
       <div className="flex flex-col">
         {/* Use h2 for subheadings */}
       </div>
