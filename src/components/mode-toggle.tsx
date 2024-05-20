@@ -31,7 +31,7 @@ export function ModeToggle() {
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Día
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => setTheme("light")}>
           Sistema
         </DropdownMenuItem>
       </DropdownMenuContent>
