@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   description:
     "Lumi People se especializa en Recursos Humanos, ofreciendo soluciones innovadoras y atención personalizada para el desarrollo efectivo de equipos. Con una vasta experiencia nacional e internacional, estamos listos para satisfacer tus necesidades empresariales.",
   icons: {
-    icon: "/lumipeopleblanco.png",
+    icon: "/lumipeople.png",
+    href:"/lumipeople.png"
   },
 };
 
