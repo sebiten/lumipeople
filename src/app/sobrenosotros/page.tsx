@@ -56,18 +56,15 @@ export default function page() {
                 </motion.h2>
 
                 <motion.p className="font-light  lg:mb-4 sm:text-xl text-start">
-                  Lumi People es una empresa integrada por un gran equipo de
-                  profesionales especializados en el área de Recursos Humanos
-                  con distintas nacionalidades, para brindar atención en el
-                  mismo idioma de nuestros clientes. Contamos con 19 años de
-                  experiencia en México, con el objetivo de fomentar el
-                  desarrollo y suministro de servicios que permitan a nuestros
-                  clientes encontrar soluciones innovadoras y eficientes a sus
-                  problemas de Capital Humano y en la planeación de recursos
-                  humanos. Nuestra meta es obtener la satisfacción total de
-                  nuestros clientes con nuestros servicios personalizados,
-                  buscando posicionarnos en todo el continente Americano y
-                  posteriormente a nivel mundial
+                  Con casa Matriz en Mexico y sede en Argentina, Lumi People es
+                  una empresa integrada por un gran equipo de profesionales
+                  especializados en Recursos Humanos, para brindar atención
+                  personalizada a cada uno de nuestros clientes. Contamos con
+                  experiencia brindado nuestros servicios a clientes
+                  estrategicos que desarrollan principalmente actividades
+                  mineras en salta. Nuestro objetivo es encontrar para cada uno
+                  soluciones dinamicas y eficientes. Boton: Obtener un
+                  presupuesto.
                 </motion.p>
                 <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
                   Obtén tu presupuesto sin compromiso{" "}
@@ -95,7 +92,6 @@ export default function page() {
                   alt={`Image ${index + 1}`}
                   className="w-full h-full object-cover rounded-lg"
                   loading="lazy"
-
                 />
               </div>
             </CarouselItem>

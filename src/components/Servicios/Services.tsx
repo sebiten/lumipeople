@@ -23,44 +23,44 @@ const Servicios = () => {
   const servicios = [
     {
       id: 1,
-      nombre: "Estrategias de marketing digital",
+      nombre: "Head Hunting",
       descripcion:
-        "Creamos estrategias personalizadas de marketing digital para potenciar tu presencia en línea y alcanzar tus objetivos comerciales.",
+        "Nuestro servicio de reclutamiento y selección te ayuda a optimizar todas tus busquedas, acortando tiempos y encontrando los perfiles que mejor se adecúen a tus necesidades.",
       icono: "/HeadHunting.jpg",
     },
     {
       id: 2,
-      nombre: "Gestión de redes sociales",
+      nombre: "Outsourcing",
       descripcion:
-        "Gestionamos tus redes sociales para aumentar tu visibilidad, interactuar con tu audiencia y generar leads cualificados.",
+        "Nuestro servicio de tercerización te permitirá enfocarte en tu negocio y tus operaciones, queremos convertirnos en tu socio estratégico para administrar tu personal y atender las cuestiones laborales y patronales.",
       icono: "/Outsourcing.jpg",
     },
     {
       id: 3,
-      nombre: "Desarrollo de contenido",
+      nombre: "Administración de campamentos",
       descripcion:
-        "Creamos contenido relevante y atractivo para tu marca, desde publicaciones en blogs hasta videos promocionales, para conectar con tu audiencia.",
+        "Con una amplia experiencia en el rubro, hacemos que tu equipo se sienta como en casa.",
       icono: "/admcamp.jpg",
     },
     {
       id: 1,
-      nombre: "Estrategias de marketing digital",
+      nombre: "Logistica y transporte de Personal",
       descripcion:
-        "Creamos estrategias personalizadas de marketing digital para potenciar tu presencia en línea y alcanzar tus objetivos comerciales.",
+        "Te ayudamos a simplifcar la logistica en la compra y el suministro de articulos y transporte de personal de tu empresa.",
       icono: "/Logistica.jpg",
     },
     {
       id: 2,
-      nombre: "Gestión de redes sociales",
+      nombre: "Servicio de Catering Internacional",
       descripcion:
-        "Gestionamos tus redes sociales para aumentar tu visibilidad, interactuar con tu audiencia y generar leads cualificados.",
+        "Adaptamos la cocina de alta montaña a la cultura de nuestros comensales, con chefs internacionales comer en la Puna es una experiencia única.",
       icono: "/RRHH.jpg",
     },
     {
       id: 3,
-      nombre: "Desarrollo de contenido",
+      nombre: "Alquiler de Maquinarias",
       descripcion:
-        "Creamos contenido relevante y atractivo para tu marca, desde publicaciones en blogs hasta videos promocionales, para conectar con tu audiencia.",
+        "Conseguimos y proveemos las maquinarias que tu proyecto necesite segun tus necesidades, también proveemos el personal en caso de que lo requieras.",
       icono: "/alqmaq.jpg",
     },
   ];

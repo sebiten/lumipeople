@@ -73,13 +73,13 @@ export default async function Post({ params: { postId } }: Props) {
       <h1 className="text-4xl mt-4 mb-0">{meta.title}</h1>{" "}
       {/* Use h1 for the title */}
       <p className="mt-2 text-sm">{pubDate}</p>
-      <article className="prose-a:text-lumiblue">{content}</article>
+      <article className="prose-a:text-lumiblue text-lg">{content}</article>
       <div className="flex flex-col">
         {/* Use h2 for subheadings */}
       </div>
       <p className="my-10 text-2xl  hover:animate-pulse">
         <Link
-          className="text-lumiorange border-b font-bold border-lumiorange "
+          className="text-lumiorange  font-bold border-lumiorange "
           href="/"
         >
           ← Volver al inicio 🏡

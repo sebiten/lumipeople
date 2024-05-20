@@ -6,6 +6,7 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import { FcStart } from "react-icons/fc";
 import { MdStart } from "react-icons/md";
 import { FaArrowRightToBracket, FaHandshakeAngle } from "react-icons/fa6";
+import Link from "next/link";
 interface IAboutProps {}
 
 // cotizar servicios 1 2 y 4
@@ -624,22 +625,25 @@ export default function About() {
                 <FaHandshakeAngle size={35} className="inline-block" />
               </span>
               <h2 className="mb-5 text-3xl font-bold ">
-                Haz felices a tus clientes ofreciendo servicios.
+                Somos tu socio estratégico
               </h2>
               <p className="mb-5 text-base ">
-                Es un hecho establecido de que un lector se distraerá con el
-                contenido legible de una página cuando observe su diseño. El
-                punto de usar Lorem Ipsum es que tiene una distribución más o
-                menos.
+                En un mundo de constante cambio ofrecer servicios que se adapten
+                a las necesidades de nuestros clientes es todo un desafio, por
+                lo que contamos con un equipo de profesionales versatiles y
+                especializados para afrontar los diferntes escenarios que se
+                presenten.
               </p>
               <p className="mb-8 text-base ">
-                Un nombre de dominio es uno de los primeros pasos para
-                establecer tu marca. Asegura una imagen de marca consistente con
-                un nombre de dominio que coincida con tu negocio.
+                Nuestro objetivo es que nuestros clientes puedan enfocarse al
+                100% en sus proyectos mientras nosotros nos ocupamos de
+                brindarles todas las soluciones relacionadas con su personal.
               </p>
-              <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
-                Obtén tu presupuesto sin compromiso{" "}
-                <FaArrowRightToBracket className="text-lumiblue" />
+              <Button className=" bg-lumiorange shadow-xl">
+                <Link className="flex gap-2 text-lg font-normal items-center justify-center" href="https://forms.gle/RNC5Ez2DrXbjcqsW6">
+                  Obtén tu presupuesto!{" "}
+                  <FaArrowRightToBracket className="text-lumiblue" />
+                </Link>
               </Button>
             </div>
           </div>

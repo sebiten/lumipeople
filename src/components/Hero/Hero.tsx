@@ -27,17 +27,29 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="absolute -bottom-44 -left-72  gap-4 flex flex-col"
       >
-        <Link  target="_blank" href="https://www.facebook.com/lumipeople" className="text-lumiblue hover:text-lumiorange">
+        <Link
+          target="_blank"
+          href="https://www.facebook.com/lumipeople"
+          className="text-lumiblue hover:text-lumiorange"
+        >
           <motion.div whileHover={{ scale: 1.2 }}>
             <FaFacebookSquare className="text-3xl" />
           </motion.div>
         </Link>
-        <Link  target="_blank" href="https://ar.linkedin.com/company/lumi-people-ar" className="text-lumiblue hover:text-lumiorange">
+        <Link
+          target="_blank"
+          href="https://ar.linkedin.com/company/lumi-people-ar"
+          className="text-lumiblue hover:text-lumiorange"
+        >
           <motion.div whileHover={{ scale: 1.2 }}>
             <FaLinkedin className="text-3xl" />
           </motion.div>
         </Link>
-        <Link  target="_blank" href="https://www.instagram.com/lumipeople.ar/" className="text-lumiblue hover:text-lumiorange">
+        <Link
+          target="_blank"
+          href="https://www.instagram.com/lumipeople.ar/"
+          className="text-lumiblue hover:text-lumiorange"
+        >
           <motion.div whileHover={{ scale: 1.2 }}>
             <FaInstagramSquare className="text-3xl" />
           </motion.div>
@@ -66,11 +78,11 @@ const Hero = () => {
             loading="eager"
           />
           <p className="font-light mb-4 text-xl text-center ">
-            En Lumi People, estamos comprometidos a brindar soluciones
-            innovadoras y personalizadas para tus necesidades de Recursos
-            Humanos. Con un equipo multicultural y 19 años de experiencia,
-            ofrecemos atención en tu idioma y resultados que superan tus
-            expectativas.
+            En Lumi People, nos especializamos en brindar soluciones integrales
+            que se adapten a las necesidades de tu empresa. Con un equipo
+            multicultural y una amplia experiencia, ofrecemos atención en tu
+            idioma y nos convertimos en tu socio estratégico para ayudarte a
+            alcanzar tus objetivos.
           </p>
         </div>
         <div className="flex gap-2  justify-center items-center sm:justify-center">

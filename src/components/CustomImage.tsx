@@ -18,7 +18,7 @@ export default function CustomImage({ src, alt, priority }: Props) {
         alt={alt}
         quality={100}
         priority={prty}
-        className="object-cover w-full rounded-lg"
+        className="object-cover w-full h-[600px]  rounded-lg"
       />
     </div>
   );

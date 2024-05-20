@@ -8,6 +8,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { SlDocs } from "react-icons/sl";
+import { FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 const vacante = [
   {
     titulo: "Desarrollador Web",
@@ -100,7 +102,57 @@ function App() {
             ))}
         </div>
       </div>
-      <Equipo />
+      <h2 className="text-2xl text-lumiblue font-bold my-10 text-center">Nuestras reclutadoras</h2>
+      <div className="flex items-center justify-center">
+        <div className="items-center rounded-lg shadow sm:flex">
+          <a href="#">
+            <img
+              className="w-full h-96 rounded-lg sm:rounded-none sm:rounded-l-lg"
+              src="/MariaJoseFerryra(recruiter).webp"
+              alt="MariaJose"
+              loading="lazy"
+            />
+          </a>
+          <div className="p-5">
+            <h3 className="text-xl font-bold tracking-tight">
+              <p className="text-2xl">Maria Jose Ferreyra</p>
+            </h3>
+            <span className="text-lumiorange text-lg">Reclutadora</span>
+            <ul className="flex space-x-4 sm:mt-0">
+              <Link
+                className="mt-2"
+                href="https://www.linkedin.com/in/mariano-gast%C3%B3n-nieva-32533442/"
+              >
+                <FaLinkedin size={24} />
+              </Link>
+            </ul>
+          </div>
+          <div className="items-center rounded-lg shadow sm:flex">
+            <a href="#">
+              <img
+                className="w-full h-96 rounded-lg sm:rounded-none sm:rounded-l-lg"
+                src="/SofiaOcaña(Recruiter).webp"
+                alt="SofiaOcaña"
+                loading="lazy"
+              />
+            </a>
+            <div className="p-5">
+              <h3 className="text-xl font-bold tracking-tight">
+                <p className="text-2xl">Sofia Ocaña</p>
+              </h3>
+              <span className="text-lumiorange text-lg">Reclutadora</span>
+              <ul className="flex space-x-4 sm:mt-0">
+                <Link
+                  className="mt-2"
+                  href="https://www.linkedin.com/in/mariano-gast%C3%B3n-nieva-32533442/"
+                >
+                  <FaLinkedin size={24} />
+                </Link>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }

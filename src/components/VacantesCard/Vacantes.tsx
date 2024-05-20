@@ -26,10 +26,6 @@ export const VacancyCard = ({ vacante }: IAboutProps) => {
             <FaMapMarkerAlt className="mr-1" />
             <span>{vacante.localidad}</span>
           </span>
-          <span className="flex items-center mr-2">
-            <FaDollarSign className="mr-1" />
-            <span>{vacante.salario}</span>
-          </span>
           <span className="flex items-center">
             <FaCalendarAlt className="mr-1" />
             <span>{vacante.fecha}</span>
