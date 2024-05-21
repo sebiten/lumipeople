@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { VacancyCard } from "@/components/VacantesCard/Vacantes";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { SlDocs } from "react-icons/sl";
 import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
