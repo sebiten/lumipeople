@@ -68,7 +68,7 @@ export default async function Post({ params: { postId } }: Props) {
   ));
 
   return (
-    <div className="prose max-w-4xl mx-auto">
+    <div className="prose max-w-4xl mx-auto px-2">
       <hr className="mt-10"></hr>
       <h1 className="text-4xl mt-4 mb-0 text-lumiorange">{meta.title}</h1>{" "}
       {/* Use h1 for the title */}

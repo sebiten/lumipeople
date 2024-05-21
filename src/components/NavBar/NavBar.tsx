@@ -17,7 +17,7 @@ export const links = [
   { href: "/", text: "Inicio", target: "_parent" },
   {
     href: "/noticias",
-    text: "Noticias ",
+    text: "Noticias",
     target: "_self",
   },
   {
