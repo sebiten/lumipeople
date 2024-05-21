@@ -12,38 +12,69 @@ import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 const vacante = [
   {
-    titulo: "Desarrollador Web",
-    localidad: "Ciudad de México",
+    titulo: "Operador de Autoelevador",
+    localidad: "Salta, Salta Argentina",
     descripcion:
-      "Estamos buscando un desarrollador web con experiencia en React.js y Node.js para unirse a nuestro equipo.",
-    salario: "100",
-    fecha: "17 Agosto 2024",
+      "Buscamos operador con certificado para operar autoelevadores y licencia E2 Vigente. Con disponibilidad para trabajar en roster.",
+    fecha: "07-05-2024",
+    url: "https://forms.gle/LWCkjmPSSLx9ZtWa7",
   },
   {
-    titulo: "Diseñador Gráfico",
-    localidad: "Barcelona, España",
+    titulo: "Chofer de camiones",
+    localidad: "Salta, Salta Argentina",
     descripcion:
-      "Buscamos un diseñador gráfico creativo y apasionado para trabajar en proyectos emocionantes.",
-    salario: "100",
-    fecha: "17 Diciembre 2024",
+      "Buscamos chofer que realice carga, descarga y transporte de mercancías peligrosas. Con licencia E1 y carnet de INTI.",
+    fecha: "09-05-2024",
+    url: "https://forms.gle/qH9Q5wDrpSmETfdh7",
   },
   {
-    titulo: "Operador Gráfico",
-    localidad: "Barcelona, España",
+    titulo: "Operador de Muestreo",
+    localidad: "Salta, Salta Argentina",
     descripcion:
-      "Buscamos un diseñador gráfico creativo y apasionado para trabajar en proyectos emocionantes.",
-    salario: "100",
-    fecha: "17 Agosto 2024",
+      "Estamos buscando operador con experiencia en minería para recolectar muestras de producción y realizar control de materiales y equipos.",
+    fecha: "10-05-2024",
+    url: "https://forms.gle/PyfDHN692LpLJ1xJA",
   },
   {
-    titulo: "Diseñador Gráfico",
-    localidad: "Barcelona, España",
+    titulo: "Técnico Superior en Minería",
+    localidad: "Salta, Salta Argentina",
     descripcion:
-      "Buscamos un diseñador gráfico creativo y apasionado para trabajar en proyectos emocionantes.",
-    salario: "100",
-    fecha: "30 Enero 2024",
+      "Precisamos de un técnico superior en minería con experiencia en manejo de sustancias químicas peligrosas.",
+    fecha: "11-05-2024",
+    url: "https://forms.gle/7SyVNbPhkzkUC2mW7",
   },
-  // Agrega más vacantes aquí...
+  {
+    titulo: "Ayudante de Cocina",
+    localidad: "Salta, Salta Argentina",
+    descripcion:
+      "Buscamos un ayudante de cocina graduado en Gastronomía con carnet de manipulación para asistencia al chef en comidas coreanas.",
+    fecha: "30-04-2024",
+    url: "https://forms.gle/VgvZrcpxb5AD4rKr5",
+  },
+  {
+    titulo: "Controlador de Materia Prima",
+    localidad: "Salta, Salta Argentina",
+    descripcion:
+      "Estamos buscando un operador que realice conexiones de cañería para ingreso de fosfato de litio y registre ingresos y egresos de la Materia Prima.",
+    fecha: "14-05-2024",
+    url: "https://forms.gle/qxLijoxZuzapoX926",
+  },
+  {
+    titulo: "Ingeniero Civil/Industrial o Arquitecto",
+    localidad: "Salta, Salta Argentina",
+    descripcion:
+      "Buscamos un profesional con experiencia en minería o construcción para análisis técnico y revisión de planos.",
+    fecha: "20-05-2024",
+    url: "https://forms.gle/fj94LjmbUj9824XN7",
+  },
+  {
+    titulo: "Analista de Higiene y Seguridad",
+    localidad: "Salta, Salta Argentina",
+    descripcion:
+      "Buscamos un analista con experiencia en aplicación de las normativas vigentes para supervisión de obra en campo y capacitación de personal.",
+    fecha: "17-05-2024",
+    url: "https://forms.gle/rLoc3Tkiqv3VGV7y9",
+  },
 ];
 
 function App() {
@@ -77,8 +108,14 @@ function App() {
               nuestra base de datos y te contactaremos cuando haya una posición
               abierta que se ajuste a tu perfil.
             </p>
-            <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl">
-              Carga tu Cv <SlDocs className="text-lumiblue" />
+            <Button className="bg-lumiorange shadow-xl">
+              <Link
+                target="_blank"
+                className="flex items-center gap-2 w-3xl text-lg font-normal"
+                href="https://forms.gle/LWCkjmPSSLx9ZtWa7"
+              >
+                Carga tu Cv <SlDocs className="text-lumiblue" />
+              </Link>
             </Button>
           </div>
         </div>
