@@ -54,7 +54,7 @@ const Servicios = () => {
       nombre: "Servicio de Catering Internacional",
       descripcion:
         "Adaptamos la cocina de alta montaña a la cultura de nuestros comensales, con chefs internacionales comer en la Puna es una experiencia única.",
-      icono: "/networking.webp",
+      icono: "/catering.webp",
     },
     {
       id: 3,
@@ -134,7 +134,7 @@ const Servicios = () => {
                 {servicio.nombre}
               </h3>
               <p className=" mb-4">{servicio.descripcion}</p>
-              <ul className="">
+              {/* <ul className="">
                 <li className="flex items-center mb-2">
                   <FaCheck className="text-lumiblue mr-2" /> Servicio
                   profesional y de calidad
@@ -147,7 +147,7 @@ const Servicios = () => {
                   <FaCheck className="text-lumiblue mr-2" /> Equipos y productos
                   de limpieza de alta calidad
                 </li>
-              </ul>
+              </ul> */}
             </motion.div>
           ))}
         </div>

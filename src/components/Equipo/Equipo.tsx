@@ -69,7 +69,7 @@ export default function Equipo() {
                 <p className="text-2xl">Celeste Castillo</p>
               </h3>
               <span className="text-lumiorange text-lg">
-                Administración de Personal
+                Coordinador de Relaciones Laborales
               </span>
 
               <ul className="flex space-x-4 sm:mt-0">

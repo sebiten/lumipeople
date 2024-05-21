@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { ModeToggle } from "../mode-toggle";
 import { Button } from "@/components/ui/button";
@@ -86,6 +86,9 @@ export default function Navbar() {
             </Link>
             <Link target="_blank" href="https://ar.linkedin.com/company/lumi-people-ar" className="hover:text-lumiorange">
               <FaLinkedin size={22} />
+            </Link>
+            <Link target="_blank" href="https://www.facebook.com/lumipeoplearg" className="hover:text-lumiorange">
+              <FaFacebook size={22} />
             </Link>
           </div>
         </div>

@@ -82,7 +82,7 @@ export default async function Post({ params: { postId } }: Props) {
           className="text-lumiorange  font-bold border-lumiorange "
           href="/"
         >
-          ← Volver al inicio 🏡
+          ← Volver a Noticias
         </Link>
       </p>
       <hr className="mt-10"></hr>

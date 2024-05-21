@@ -14,22 +14,25 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import Link from "next/link";
 // principal ancha
 // foto de lumipeople abril
 const images = [
-  "/logo-1.webp",
-  "/logo-2.webp",
-  "/logo-3.webp",
-  "/logo-4.webp",
-  "/logo-6.webp",
-  "/logo-7.webp",
-  "/logo-8.webp",
-  "/logo-9.webp",
-  "/logo-10.webp",
-  "/logo-11.webp",
-  "/logo-15.webp",
-
-];
+  "/MARCAS/logo-1.webp",
+  "/MARCAS/logo-2.webp",
+  "/MARCAS/logo-3.webp",
+  "/MARCAS/logo-4.webp",
+  "/MARCAS/logo-5.webp",
+  "/MARCAS/logo-6.webp",
+  "/MARCAS/logo-7.webp",
+  "/MARCAS/logo-8.webp",
+  "/MARCAS/logo-9.webp",
+  "/MARCAS/logo-10.webp",
+  "/MARCAS/logo-11.webp",
+  "/MARCAS/logo-12.webp",
+  "/MARCAS/logo-13.webp",
+  "/MARCAS/logo-14.webp"
+]
 
 export default function page() {
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
@@ -70,12 +73,17 @@ export default function page() {
                   experiencia brindado nuestros servicios a clientes
                   estrategicos que desarrollan principalmente actividades
                   mineras en salta. Nuestro objetivo es encontrar para cada uno
-                  soluciones dinamicas y eficientes. Boton: Obtener un
-                  presupuesto.
+                  soluciones dinamicas y eficientes.
                 </motion.p>
-                <Button className="flex gap-2 text-lg font-normal bg-lumiorange shadow-xl">
-                  Obtén tu presupuesto sin compromiso{" "}
-                  <FaArrowRightToBracket className="text-lumiblue" />
+                <Button className=" bg-lumiorange shadow-xl">
+                  <Link
+                    target="_blank"
+                    className="flex gap-2 text-lg font-normal items-center justify-center"
+                    href="https://forms.gle/RNC5Ez2DrXbjcqsW6"
+                  >
+                    Obtén tu presupuesto!{" "}
+                    <FaArrowRightToBracket className="text-lumiblue" />
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -97,7 +105,7 @@ export default function page() {
                 <img
                   src={image}
                   alt={`Image ${index + 1}`}
-                  className="w-32 h-14 object-fill rounded-lg m-auto"
+                  className="w-auto h-20 object-fill rounded-lg m-auto"
                   loading="lazy"
                 />
               </div>
