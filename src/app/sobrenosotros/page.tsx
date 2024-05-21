@@ -37,8 +37,8 @@ export default function page() {
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                src="/About.jpg"
-                alt="image"
+                src="/Aboutus.webp"
+                alt="lumiteam"
                 loading="lazy"
                 className="rounded-2xl"
               />

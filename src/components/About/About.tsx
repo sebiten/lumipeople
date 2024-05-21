@@ -21,7 +21,7 @@ export default function About() {
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="py-3 sm:py-4">
                   <img
-                    src="/cotizarservicios1.jpg"
+                    src="/cotizarservicios1.webp"
                     alt=""
                     className="w-full rounded-2xl shadow-lg"
                     loading="lazy"
@@ -29,7 +29,7 @@ export default function About() {
                 </div>
                 <div className="py-3 sm:py-4">
                   <img
-                    src="cotizarservicios2.jpg"
+                    src="cotizarservicios2.webp"
                     alt=""
                     className="w-full rounded-2xl shadow-lg"
                     loading="lazy"
@@ -39,7 +39,7 @@ export default function About() {
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="relative z-10 my-4">
                   <img
-                    src="cotizarservicios3.jpg"
+                    src="cotizarservicios3.webp"
                     alt=""
                     className="w-full rounded-2xl shadow-lg"
                     loading="lazy"

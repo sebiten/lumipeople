@@ -64,7 +64,7 @@ function App() {
             width={1280}
             height={720}
             alt="Hiring"
-            src={"/cargatucv.jpg"}
+            src={"/cargatucv.webp"}
           />
           <div className="text-start">
             <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
@@ -103,7 +103,7 @@ function App() {
         </div>
       </div>
       <h2 className="text-2xl text-lumiblue font-bold my-10 text-center">
-        Nuestras reclutadoras
+        Reclutamiento y seleccion de personal
       </h2>
       <div className="flex items-center justify-center">
         <div className="items-center rounded-lg shadow sm:flex">
