@@ -17,11 +17,18 @@ import { FaArrowRightToBracket } from "react-icons/fa6";
 // principal ancha
 // foto de lumipeople abril
 const images = [
-  "/lumipeople.png",
-  "/lumipeople.png",
-  "/lumipeople.png",
-  "/lumipeople.png",
-  "/lumipeople.png",
+  "/logo-1.webp",
+  "/logo-2.webp",
+  "/logo-3.webp",
+  "/logo-4.webp",
+  "/logo-6.webp",
+  "/logo-7.webp",
+  "/logo-8.webp",
+  "/logo-9.webp",
+  "/logo-10.webp",
+  "/logo-11.webp",
+  "/logo-15.webp",
+
 ];
 
 export default function page() {
@@ -75,7 +82,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <h3 className="text-center text-2xl font-bold text-lumigray mt-4">
+      <h3 className="text-center text-2xl mb-4 text-lumigray mt-4">
         Empresas con la que colaboramos
       </h3>
       <Carousel
@@ -85,12 +92,12 @@ export default function page() {
       >
         <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
-              <div className="p-1">
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/6">
+              <div className=" my-6">
                 <img
                   src={image}
                   alt={`Image ${index + 1}`}
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-32 h-14 object-fill rounded-lg m-auto"
                   loading="lazy"
                 />
               </div>
