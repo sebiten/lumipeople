@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     "Lumi People se especializa en Recursos Humanos, ofreciendo soluciones innovadoras y atención personalizada para el desarrollo efectivo de equipos. Con una vasta experiencia nacional e internacional, estamos listos para satisfacer tus necesidades empresariales.",
   icons: {
     icon: "/lumipeople.png",
-    href:"/lumipeople.png"
   },
 };
 
@@ -31,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/lumipeople.png" type="image/png" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-L4FMM9C2Q9"
