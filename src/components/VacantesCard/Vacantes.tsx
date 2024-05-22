@@ -9,6 +9,7 @@ import {
   FaPhone,
 } from "react-icons/fa";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import Link from "next/link";
 
 interface IAboutProps {
   vacante: string | any;
@@ -19,7 +20,9 @@ export const VacancyCard = ({ vacante }: IAboutProps) => {
     <div className="rounded-md shadow-md p-4 flex items-center">
       <div className=" w-full h-full">
         <div className="flex items-center">
-          <h3 className="text-lg  text-lumiorange font-bold ">{vacante.titulo}</h3>
+          <h3 className="text-lg  text-lumiorange font-bold ">
+            {vacante.titulo}
+          </h3>
         </div>
         <div className="flex items-center mt-2">
           <span className="flex items-center mr-2">
@@ -33,8 +36,14 @@ export const VacancyCard = ({ vacante }: IAboutProps) => {
         </div>
         <p className="mt-4 text-gray-600">{vacante.descripcion}</p>
       </div>
-      <Button className="flex gap-2 mt-2 text-lg font-normal bg-lumiorange shadow-xl">
-        Aplicar <FaArrowRightToBracket />
+      <Button className=" bg-lumiorange shadow-xl">
+        <Link
+        target="_blank"
+          className="flex gap-2  text-lg font-normal items-center justify-center"
+          href={vacante.url}
+        >
+          Aplicar <FaArrowRightToBracket />
+        </Link>
       </Button>
     </div>
   );
