@@ -7,9 +7,9 @@ import Link from "next/link";
 export default function Noticias() {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: .5 }}
       className="my-10"
     >
       <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">

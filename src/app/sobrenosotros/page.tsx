@@ -31,8 +31,8 @@ const images = [
   "/MARCAS/logo-11.webp",
   "/MARCAS/logo-12.webp",
   "/MARCAS/logo-13.webp",
-  "/MARCAS/logo-14.webp"
-]
+  "/MARCAS/logo-14.webp",
+];
 
 export default function page() {
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
@@ -44,9 +44,9 @@ export default function page() {
           <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
             <div className="md:5/12 lg:w-5/12">
               <motion.img
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
                 src="/Aboutus.webp"
                 alt="lumiteam"
                 loading="lazy"
@@ -56,16 +56,11 @@ export default function page() {
             <div className="md:7/12 lg:w-6/12">
               <div className="mx-auto max-w-screen-sm  mb-8 lg:mb-16">
                 <hr className="my-4"></hr>
-                <motion.h2
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  className="mb-4 text-3xl tracking-tight font-extrabold text-lumiorange"
-                >
+                <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-lumiorange">
                   ¿Quienes Somos?
-                </motion.h2>
+                </h2>
 
-                <motion.p className="font-light  lg:mb-4 sm:text-xl text-start">
+                <p className="font-light  lg:mb-4 sm:text-xl text-start">
                   Con casa Matriz en Mexico y sede en Argentina, Lumi People es
                   una empresa integrada por un gran equipo de profesionales
                   especializados en Recursos Humanos, para brindar atención
@@ -74,7 +69,7 @@ export default function page() {
                   estrategicos que desarrollan principalmente actividades
                   mineras en salta. Nuestro objetivo es encontrar para cada uno
                   soluciones dinamicas y eficientes.
-                </motion.p>
+                </p>
                 <Button className=" bg-lumiorange shadow-xl">
                   <Link
                     target="_blank"

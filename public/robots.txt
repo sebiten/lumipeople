@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.lumipeoplearg.com/
+
+# Sitemaps
+Sitemap: https://www.lumipeoplearg.com/sitemap.xml

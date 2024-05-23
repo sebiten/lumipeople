@@ -80,9 +80,9 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: .5 }}
       className="min-h-screen max-w-7xl mx-auto py-8"
     >
       <hr className="w-fit" />
