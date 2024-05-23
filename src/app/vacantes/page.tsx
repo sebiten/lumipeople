@@ -86,8 +86,8 @@ function App() {
       className="min-h-screen max-w-7xl mx-auto py-8"
     >
       <hr className="w-fit" />
-      <div className="max-w-7xl mx-auto">
-        <div className="mx-auto flex gap-10 max-w-7xl items-center justify-center w-full text-center mb-4 lg:mb-14">
+      <div className="max-w-7xl mx-auto p-2">
+        <div className="mx-auto block lg:flex gap-10 max-w-7xl items-center justify-center w-full text-center mb-4 lg:mb-14">
           <img
             className="w-[600px] h-auto rounded-md"
             loading="lazy"
