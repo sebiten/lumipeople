@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import Blob from "../Blob/Blob";
 import {
   FaBriefcase,
   FaLaptop,
@@ -14,7 +13,6 @@ import { GrWorkshop } from "react-icons/gr";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-interface IOpenPositionsProps {}
 
 export default function OpenPositions() {
   return (

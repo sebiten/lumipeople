@@ -15,7 +15,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Buscamos operador con certificado para operar autoelevadores y licencia E2 Vigente. Con disponibilidad para trabajar en roster.",
-    fecha: "07-05-2024",
+    fecha: "07-06-2024",
     url: "https://forms.gle/LWCkjmPSSLx9ZtWa7",
   },
   {
@@ -23,7 +23,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Buscamos chofer que realice carga, descarga y transporte de mercancías peligrosas. Con licencia E1 y carnet de INTI.",
-    fecha: "09-05-2024",
+    fecha: "09-06-2024",
     url: "https://forms.gle/qH9Q5wDrpSmETfdh7",
   },
   {
@@ -31,7 +31,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Estamos buscando operador con experiencia en minería para recolectar muestras de producción y realizar control de materiales y equipos.",
-    fecha: "10-05-2024",
+    fecha: "10-06-2024",
     url: "https://forms.gle/PyfDHN692LpLJ1xJA",
   },
   {
@@ -39,7 +39,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Precisamos de un técnico superior en minería con experiencia en manejo de sustancias químicas peligrosas.",
-    fecha: "11-05-2024",
+    fecha: "11-06-2024",
     url: "https://forms.gle/7SyVNbPhkzkUC2mW7",
   },
   {
@@ -47,7 +47,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Buscamos un ayudante de cocina graduado en Gastronomía con carnet de manipulación para asistencia al chef en comidas coreanas.",
-    fecha: "30-04-2024",
+    fecha: "30-06-2024",
     url: "https://forms.gle/VgvZrcpxb5AD4rKr5",
   },
   {
@@ -55,7 +55,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Estamos buscando un operador que realice conexiones de cañería para ingreso de fosfato de litio y registre ingresos y egresos de la Materia Prima.",
-    fecha: "14-05-2024",
+    fecha: "14-06-2024",
     url: "https://forms.gle/qxLijoxZuzapoX926",
   },
   {
@@ -63,7 +63,7 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Buscamos un profesional con experiencia en minería o construcción para análisis técnico y revisión de planos.",
-    fecha: "20-05-2024",
+    fecha: "20-06-2024",
     url: "https://forms.gle/fj94LjmbUj9824XN7",
   },
   {
@@ -71,9 +71,52 @@ const vacante = [
     localidad: "Salta, Salta Argentina",
     descripcion:
       "Buscamos un analista con experiencia en aplicación de las normativas vigentes para supervisión de obra en campo y capacitación de personal.",
-    fecha: "17-05-2024",
+    fecha: "17-06-2024",
     url: "https://forms.gle/rLoc3Tkiqv3VGV7y9",
   },
+  {
+    titulo: "Chofer de pasajeros",
+    localidad: "Salta, Salta Argentina",
+    descripcion: "Buscamos chofer que realice traslados de personal desde Salta a proyectos con licencia D3 (excluyente) y experiencia en puna.",
+    fecha: "11-06-2024",
+    url: "https://forms.gle/SsVqoP1f8B8Nty3H6"
+  },
+  {
+    titulo: "Ingeniero Mecánico",
+    localidad: "Salta, Salta Argentina",
+    descripcion: "Buscamos ingeniero para liderar proyectos, con experiencia en dibujo técnico (Autocad y/o Solidwork).",
+    fecha: "12-06-2024",
+    url: "https://forms.gle/4PtpktRz8UpfWsVW8"
+  },
+  {
+    titulo: "Operario Soldador",
+    localidad: "Salta, Salta Argentina",
+    descripcion: "Buscamos soldadores con experiencia en máquinas de soldar Mig y Tig.",
+    fecha: "14-06-2024",
+    url: "https://forms.gle/4PtpktRz8UpfWsVW8"
+  },
+  {
+    titulo: "Abogado Laboral",
+    localidad: "Salta, Salta Argentina",
+    descripcion: "Buscamos un abogado con experiencia en minería con enfoque en comunicación con sindicatos y entidades gubernamentales.",
+    fecha: "18-06-2024",
+    url: "https://forms.gle/3aTW3bSiSsegP3Vj6"
+  },
+  {
+    titulo: "Traductor coreano/español",
+    localidad: "Salta, Salta Argentina",
+    descripcion: "Estamos reclutando traductores coreano/español para empresa minera.",
+    fecha: "18-06-2024",
+    url: "https://forms.gle/4PtpktRz8UpfWsVW8"
+  },
+  {
+    titulo: "Operario Metalúrgico",
+    localidad: "Salta, Salta Argentina",
+    descripcion: "Buscamos operarios metalúrgicos para proyecto en puna.",
+    fecha: "18-06-2024",
+    url: "https://forms.gle/4PtpktRz8UpfWsVW8"
+  }
+
 ];
 
 function App() {
