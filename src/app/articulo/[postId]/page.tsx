@@ -80,7 +80,7 @@ export default async function Post({ params: { postId } }: Props) {
       <p className="my-10 text-2xl  hover:animate-pulse">
         <Link
           className="text-lumiorange  font-bold border-lumiorange "
-          href="/"
+          href="/noticias"
         >
           ← Volver a Noticias
         </Link>

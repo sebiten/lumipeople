@@ -9,7 +9,7 @@ export default function Noticias() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: .5 }}
+      transition={{ duration: 0.5 }}
       className="my-10"
     >
       <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
@@ -33,7 +33,12 @@ export default function Noticias() {
             ></iframe>
           </div>
         </div>
-
+        <BlogCard
+          imgSrc="/LumiPeopleArgentinaMining2024.webp"
+          title="Lumi People será sponsor Copper en Argentina Mining 2024 en Salta, Argentina"
+          text="Lumi People anuncia su participación como sponsor Copper en Argentina Mining 2024, un evento clave para la industria minera en Latinoamérica que se celebrará en Salta, Argentina."
+          id="lumipeople-sponsor-de-copper-en-argentina-mining"
+        />
         <BlogCard
           imgSrc="/ComoelaborarCV.webp"
           title="Cómo Elaborar un Buen Currículum: Guía Completa"
@@ -41,12 +46,7 @@ export default function Noticias() {
           id="como-elaborar-un-buen-curriculum"
         />
 
-        <BlogCard
-          imgSrc="/EntrevistaPresencial.webp"
-          title="Cómo Prepararse para una Entrevista Presencial: Guía Completa"
-          text="Prepararse adecuadamente para una entrevista presencial es crucial para causar una buena impresión y aumentar tus posibilidades de obtener el empleo"
-          id="como-preparase-para-una-entrevista-presencial"
-        />
+
       </section>
       {/* Articulos de mas abajo */}
       <section className="grid grid-cols-2 md:grid-cols-3  container mx-auto gap-4 p-4 ">
@@ -87,7 +87,7 @@ export default function Noticias() {
           text="Explora los perfiles profesionales más demandados en la industria de la minería. Desde ingenieros y técnicos hasta profesionales en higiene, seguridad y recursos humanos, descubre las habilidades clave necesarias para destacar en este sector vital."
           id="perfiles-mas-demandados-en-la-industria"
         />
-       <div className="col-span-1 sm:col-span-2 lg:col-span-1 row-span-2 ">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-1 row-span-2 ">
           <div className="relative pt-[56.25%] overflow-hidden h-full">
             <iframe
               className="absolute inset-0 w-full h-full border-0"
@@ -106,7 +106,14 @@ export default function Noticias() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
+
         </div>
+        <BlogCard
+          imgSrc="/EntrevistaPresencial.webp"
+          title="Cómo Prepararse para una Entrevista Presencial: Guía Completa"
+          text="Prepararse adecuadamente para una entrevista presencial es crucial para causar una buena impresión y aumentar tus posibilidades de obtener el empleo"
+          id="como-preparase-para-una-entrevista-presencial"
+        />
       </section>
 
       {/* <section className="grid grid-cols-3 container mx-auto gap-4 p-4 font-bold">
