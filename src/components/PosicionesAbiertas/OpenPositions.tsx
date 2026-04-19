@@ -1,73 +1,57 @@
-"use client"
-import React from "react";
-import {
-  FaBriefcase,
-  FaLaptop,
-  FaUserFriends,
-  FaHandsHelping,
-} from "react-icons/fa";
-import { TiArrowRight } from "react-icons/ti";
-import { Button } from "../ui/button";
-import { BsPersonWorkspace } from "react-icons/bs";
-import { GrWorkshop } from "react-icons/gr";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowRight, Briefcase, HeartHandshake, Laptop, Users } from "lucide-react";
+import { Button } from "../ui/button";
 
+const benefits = [
+  { label: "Oportunidades reales", icon: Briefcase },
+  { label: "Procesos ágiles", icon: Laptop },
+  { label: "Equipo cercano", icon: Users },
+  { label: "Impacto positivo", icon: HeartHandshake },
+];
 
 export default function OpenPositions() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="pb-14 my-12 shadow-lg max-w-7xl mx-auto"
-    >
-      <div className="mx-auto  text-center px-4 lg:px-8">
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
-            ¿Quieres Trabajar con Nosotros?{" "}
-            <GrWorkshop className="inline-block" />
-            <hr className="border-b border-lumiblue border-dotted mt-2" />
+    <section className="px-4 pb-8 pt-10 lg:pb-16">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-50 to-orange-50 px-6 py-10 shadow-sm dark:border-slate-800 dark:from-slate-950 dark:to-slate-900">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
+            Talento
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-slate-50 md:text-4xl">
+            Vacantes y oportunidades para perfiles que quieren crecer.
           </h2>
-          <p className="font-light  lg:mb-16 sm:text-xl ">
-            ¡Únete a nuestro equipo y sé parte de algo increíble! Estamos en
-            busca de personas talentosas y apasionadas que deseen contribuir a
-            nuestro crecimiento y éxito.
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+            Publicamos búsquedas activas y recibimos perfiles para futuras
+            convocatorias, especialmente en Salta y en operaciones ligadas a
+            minería, industria y servicios.
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:flex sm:gap-10 sm:justify-center sm:items-center">
-          <div className="flex flex-col items-center">
-            <div className="rounded-full p-4 shadow-lg">
-              <FaBriefcase size={80} className="text-4xl text-lumiblue" />
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {benefits.map(({ label, icon: Icon }) => (
+            <div
+              key={label}
+              className="rounded-2xl border border-white/60 bg-white/80 p-5 text-center shadow-sm dark:border-slate-800 dark:bg-slate-950/70"
+            >
+              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-orange-100 text-orange-600 dark:bg-orange-950/40 dark:text-orange-200">
+                <Icon className="h-6 w-6" />
+              </div>
+              <p className="font-semibold text-slate-800 dark:text-slate-100">
+                {label}
+              </p>
             </div>
-            <h3 className="text-xl  mt-4">Oportunidades</h3>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="rounded-full p-4 shadow-lg">
-              <FaLaptop size={80} className="text-4xl text-lumiblue" />
-            </div>
-            <h3 className="text-xl  mt-4">Flexibilidad</h3>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="rounded-full p-4 shadow-lg">
-              <FaUserFriends size={80} className="text-4xl text-lumiblue" />
-            </div>
-            <h3 className="text-xl  mt-4">Equipo increíble</h3>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="rounded-full p-4 shadow-lg">
-              <FaHandsHelping size={80} className="text-4xl text-lumiblue" />
-            </div>
-            <h3 className="text-xl  mt-4">Impacto positivo</h3>
-          </div>
+          ))}
         </div>
-        <Link href="/vacantes">
-          <Button className="flex gap-2  font-bold text-lg mx-auto my-10 bg-lumiorange shadow-xl">
-            Ver Posiciones Abiertas!{" "}
-            <BsPersonWorkspace className="text-lumiblue" />
+
+        <div className="mt-10 flex justify-center">
+          <Button asChild size="lg" className="bg-orange-500 text-white hover:bg-orange-600">
+            <Link href="/vacantes">
+              Ver posiciones abiertas
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
-        </Link>
+        </div>
       </div>
-    </motion.div>
+    </section>
   );
 }

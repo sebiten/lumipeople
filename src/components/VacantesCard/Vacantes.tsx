@@ -1,50 +1,44 @@
-import React from "react";
-import { BsGeoAlt, BsCardText } from "react-icons/bs";
-import { Button } from "../ui/button";
-import {
-  FaArrowAltCircleRight,
-  FaCalendarAlt,
-  FaDollarSign,
-  FaMapMarkerAlt,
-  FaPhone,
-} from "react-icons/fa";
-import { FaArrowRightToBracket } from "react-icons/fa6";
 import Link from "next/link";
+import { CalendarDays, MapPin } from "lucide-react";
+import { Button } from "../ui/button";
 
-interface IAboutProps {
-  vacante: string | any;
-}
+type Vacancy = {
+  titulo: string;
+  localidad: string;
+  descripcion: string;
+  fecha: string;
+  url: string;
+};
 
-export const VacancyCard = ({ vacante }: IAboutProps) => {
+export function VacancyCard({ vacante }: { vacante: Vacancy }) {
   return (
-    <div className="rounded-md shadow-md p-4 flex items-center">
-      <div className=" w-full h-full">
-        <div className="flex items-center">
-          <h3 className="text-lg  text-lumiorange font-bold ">
+    <article className="flex flex-col gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950 lg:flex-row lg:items-center lg:justify-between">
+      <div className="space-y-4">
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
             {vacante.titulo}
           </h3>
+          <div className="mt-3 flex flex-wrap gap-4 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-orange-500" />
+              {vacante.localidad}
+            </span>
+            <span className="flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 text-orange-500" />
+              Publicada el {vacante.fecha}
+            </span>
+          </div>
         </div>
-        <div className="flex items-center mt-2">
-          <span className="flex items-center mr-2">
-            <FaMapMarkerAlt className="mr-1" />
-            <span>{vacante.localidad}</span>
-          </span>
-          <span className="flex items-center">
-            <FaCalendarAlt className="mr-1" />
-            <span>{vacante.fecha}</span>
-          </span>
-        </div>
-        <p className="mt-4 text-gray-600">{vacante.descripcion}</p>
+        <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
+          {vacante.descripcion}
+        </p>
       </div>
-      <Button className=" bg-lumiorange shadow-xl">
-        <Link
-        target="_blank"
-          className="flex gap-2  text-lg font-normal items-center justify-center"
-          href={vacante.url}
-        >
-          Aplicar <FaArrowRightToBracket />
+
+      <Button asChild className="bg-orange-500 text-white hover:bg-orange-600">
+        <Link href={vacante.url} target="_blank">
+          Postularme
         </Link>
       </Button>
-    </div>
+    </article>
   );
-};
+}

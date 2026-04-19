@@ -1,160 +1,111 @@
-"use client";
-import React from "react";
 import Image from "next/image";
-import {
-  FaBriefcase,
-  FaCheck,
-  FaHandsHelping,
-  FaLaptop,
-  FaMedal,
-  FaSprayCan,
-  FaUserFriends,
-  FaUserGraduate,
-} from "react-icons/fa";
-import { RiTeamFill } from "react-icons/ri";
-import { FaHandshakeAngle, FaServicestack } from "react-icons/fa6";
-import { MdWork } from "react-icons/md";
-import { Button } from "../ui/button";
-import { IoMdInformationCircleOutline } from "react-icons/io";
-import { HiMiniPencilSquare } from "react-icons/hi2";
-import { motion } from "framer-motion";
+import { Briefcase, Building, ChefHat, Mountain, Truck, Users } from "lucide-react";
 
-const Servicios = () => {
-  const servicios = [
-    {
-      id: 1,
-      nombre: "Head Hunting",
-      descripcion:
-        "Nuestro servicio de reclutamiento y selección te ayuda a optimizar todas tus busquedas, acortando tiempos y encontrando los perfiles que mejor se adecúen a tus necesidades.",
-      icono: "/headHunting.webp",
-    },
-    {
-      id: 2,
-      nombre: "Outsourcing",
-      descripcion:
-        "Nuestro servicio de tercerización te permitirá enfocarte en tu negocio y tus operaciones, queremos convertirnos en tu socio estratégico para administrar tu personal y atender las cuestiones laborales y patronales.",
-      icono: "/outsourcing.webp",
-    },
-    {
-      id: 3,
-      nombre: "Administración de campamentos",
-      descripcion:
-        "Con una amplia experiencia en el rubro, hacemos que tu equipo se sienta como en casa.",
-      icono: "/admdecamp.webp",
-    },
-    {
-      id: 1,
-      nombre: "Logistica y transporte de Personal",
-      descripcion:
-        "Te ayudamos a simplifcar la logistica en la compra y el suministro de articulos y transporte de personal de tu empresa.",
-      icono: "/logistica.webp",
-    },
-    {
-      id: 2,
-      nombre: "Servicio de Catering Internacional",
-      descripcion:
-        "Adaptamos la cocina de alta montaña a la cultura de nuestros comensales, con chefs internacionales comer en la Puna es una experiencia única.",
-      icono: "/catering.webp",
-    },
-    {
-      id: 3,
-      nombre: "Alquiler de Maquinarias",
-      descripcion:
-        "Conseguimos y proveemos las maquinarias que tu proyecto necesite segun tus necesidades, también proveemos el personal en caso de que lo requieras.",
-      icono: "/alqmaq.webp",
-    },
-  ];
+const servicios = [
+  {
+    id: "headhunting",
+    nombre: "Head Hunting y selección",
+    descripcion:
+      "Búsquedas estratégicas para perfiles técnicos, administrativos y de liderazgo.",
+    icono: "/headHunting.webp",
+    icon: Briefcase,
+  },
+  {
+    id: "outsourcing",
+    nombre: "Outsourcing de personal",
+    descripcion:
+      "Gestión de personal para que cada cliente concentre recursos en su operación principal.",
+    icono: "/outsourcing.webp",
+    icon: Users,
+  },
+  {
+    id: "campamentos",
+    nombre: "Administración de campamentos",
+    descripcion:
+      "Coordinación operativa para entornos de alta exigencia y trabajo en altura.",
+    icono: "/admdecamp.webp",
+    icon: Mountain,
+  },
+  {
+    id: "logistica",
+    nombre: "Logística y transporte de personal",
+    descripcion:
+      "Planificación de traslados y soporte de abastecimiento para operaciones activas.",
+    icono: "/logistica.webp",
+    icon: Truck,
+  },
+  {
+    id: "catering",
+    nombre: "Catering internacional",
+    descripcion:
+      "Propuestas gastronómicas adaptadas a equipos multiculturales y operaciones remotas.",
+    icono: "/catering.webp",
+    icon: ChefHat,
+  },
+  {
+    id: "maquinaria",
+    nombre: "Alquiler de maquinarias",
+    descripcion:
+      "Búsqueda y provisión de equipos según la necesidad operativa de cada proyecto.",
+    icono: "/alqmaq.webp",
+    icon: Building,
+  },
+];
 
+export default function Servicios() {
   return (
-    <section className="w-full mx-auto my-16">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="w-full mx-auto px-6 sm:px-10 lg:px-2"
-      >
-        <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold border-b">
-            {" "}
-            Nuestros servicios{" "}
-            <MdWork className="inline-block text-lumiorange" />
-            <hr className="border-b border-lumiblue border-dotted mt-2" />
+    <section className="px-4 py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
+            Servicios
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-slate-50 md:text-4xl">
+            Una propuesta integral para recursos humanos y soporte operativo.
           </h2>
-          <p className="font-light  lg:mb-10 sm:text-xl ">
-            Ofrecemos una amplia gama de servicios diseñados para satisfacer tus
-            necesidades y superar tus expectativas.
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+            Diseñamos soluciones para empresas que necesitan cobertura confiable,
+            tiempos de respuesta ágiles y una ejecución alineada con la realidad
+            de sus operaciones.
           </p>
         </div>
-{/*
-        <div className="rounded-lg shadow-lg p-6">
-          <div className="flex justify-center mb-4">
-            <Image
-              alt="rrhh"
-              src="/rrhh.webp"
-              width={1920}
-              height={1080}
-              className="object-cover w-full h-96 rounded-lg mx-auto "
-            />
-          </div>
-          <h3 className=" text-center text-2xl mb-2 text-lumiorange uppercase font-bold">
-            Recursos Humanos
-          </h3>
-          <p className="text-center text-lg mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            tenetur alias repudiandae doloribus ipsum modi quos aperiam, quidem
-            amet architecto exercitationem recusandae enim error, tempore
-            voluptatibus laudantium perspiciatis, neque consequatur.
-          </p>
-          <Button className="flex gap-2 w-3xl text-lg font-normal bg-lumiorange shadow-xl mx-auto">
-            ¡Obtén una cotización ahora!{" "}
-            <HiMiniPencilSquare className="text-lumiblue" />
-          </Button>
-        </div> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {servicios.map((servicio) => (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              key={servicio.id}
-              className="rounded-lg shadow-lg p-6"
-            >
-              <div className="flex justify-center mb-4">
-                <img
-                  src={servicio.icono}
-                  alt={servicio.nombre}
-                  width={400}
-                  height={400}
-                  loading="lazy"
-                  className="object-cover w-96 h-96 rounded-lg mx-auto "
-                />
-              </div>
-              <h3 className="text-xl mb-2 text-lumiorange uppercase">
-                {servicio.nombre}
-              </h3>
-              <p className=" mb-4">{servicio.descripcion}</p>
-              {/* <ul className="">
-                <li className="flex items-center mb-2">
-                  <FaCheck className="text-lumiblue mr-2" /> Servicio
-                  profesional y de calidad
-                </li>
-                <li className="flex items-center mb-2">
-                  <FaCheck className="text-lumiblue mr-2" /> Personal altamente
-                  capacitado y confiable
-                </li>
-                <li className="flex items-center">
-                  <FaCheck className="text-lumiblue mr-2" /> Equipos y productos
-                  de limpieza de alta calidad
-                </li>
-              </ul> */}
-            </motion.div>
-          ))}
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {servicios.map((servicio) => {
+            const Icon = servicio.icon;
+
+            return (
+              <article
+                key={servicio.id}
+                className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={servicio.icono}
+                    alt={servicio.nombre}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="space-y-4 p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-2xl bg-orange-50 p-3 text-orange-600 dark:bg-orange-950/40 dark:text-orange-200">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                      {servicio.nombre}
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-6 text-muted-foreground">
+                    {servicio.descripcion}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
         </div>
-
-      </motion.div>
+      </div>
     </section>
   );
-};
-
-export default Servicios;
+}

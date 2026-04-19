@@ -1,145 +1,130 @@
-"use client";
-import React from "react";
 import BlogCard from "../BlogCard/BlogCard";
-import { motion } from "framer-motion";
-import Link from "next/link";
+
+const featuredPosts = [
+  {
+    imgSrc: "/LumiPeopleArgentinaMining2024.webp",
+    title: "Lumi People será sponsor Copper en Argentina Mining 2024 en Salta",
+    text: "Participación de Lumi People en uno de los eventos más relevantes para la industria minera y sus proveedores en la región.",
+    id: "lumipeople-sponsor-de-copper-en-argentina-mining",
+  },
+  {
+    imgSrc: "/ComoelaborarCV.webp",
+    title: "Cómo elaborar un buen currículum",
+    text: "Guía práctica para mejorar tu CV y aumentar tus chances de avanzar en un proceso de selección.",
+    id: "como-elaborar-un-buen-curriculum",
+  },
+  {
+    imgSrc: "/EntrevistaVirtual.webp",
+    title: "Cómo prepararse para una entrevista virtual",
+    text: "Consejos concretos para llegar mejor preparado a una entrevista remota.",
+    id: "como-preparase-para-una-entrevista-virtual",
+  },
+  {
+    imgSrc: "/Networking.webp",
+    title: "Cómo realizar networking",
+    text: "Buenas prácticas para construir vínculos profesionales y abrir oportunidades.",
+    id: "como-realizar-networking",
+  },
+  {
+    imgSrc: "/Redessocialestrabajo.webp",
+    title: "¿En qué redes sociales buscan los reclutadores?",
+    text: "Qué plataformas miran los reclutadores y cómo mejorar tu presencia digital.",
+    id: "en-que-redes-buscan-los-reclutadores",
+  },
+  {
+    imgSrc: "/HabilidadesHard.webp",
+    title: "Las habilidades hard más valoradas en la actualidad",
+    text: "Competencias técnicas que hoy tienen más peso en búsquedas laborales y procesos de selección.",
+    id: "habilidades-hard",
+  },
+  {
+    imgSrc: "/HabilidadesSoft.webp",
+    title: "Las habilidades soft más valoradas en la actualidad",
+    text: "Comunicación, liderazgo y adaptabilidad: qué miran las empresas al evaluar talento.",
+    id: "habilidades-soft",
+  },
+  {
+    imgSrc: "/Perfilesmasdemandados.webp",
+    title: "Perfiles más demandados en la industria minera",
+    text: "Un panorama de los perfiles que hoy muestran mayor demanda en proyectos mineros.",
+    id: "perfiles-mas-demandados-en-la-industria",
+  },
+  {
+    imgSrc: "/EntrevistaPresencial.webp",
+    title: "Cómo prepararse para una entrevista presencial",
+    text: "Aspectos clave para transmitir una buena imagen y responder con seguridad.",
+    id: "como-preparase-para-una-entrevista-presencial",
+  },
+];
 
 export default function Noticias() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="my-10"
-    >
-      <div className="mx-auto max-w-screen-sm text-center mb-4 lg:mb-4">
-        <h2 className="mb-4 text-3xl tracking-tight font-extrabold ">
-          {" "}
-          Noticias e Información
-        </h2>
-        <p className="font-light  lg:mb-10 sm:text-xl ">
-          ¡Bienvenido al Centro de Noticias de Lumi!
+    <div className="mx-auto max-w-7xl px-4 py-10">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
+          Noticias y contenidos
+        </p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">
+          Blog de Lumi People sobre empleo, talento y actualidad empresarial.
+        </h1>
+        <p className="mt-4 text-lg leading-8 text-muted-foreground">
+          Publicamos novedades de la empresa, participación en eventos y
+          contenido útil para postulantes, reclutadores y empresas que buscan
+          mejorar sus procesos de personas.
         </p>
       </div>
-      {/* Seccion de iframe con dos articulos al lado */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 container mx-auto gap-4 p-4 ">
-        <div className="col-span-1 sm:col-span-2 lg:col-span-2 row-span-2 ">
-          <div className="relative pt-[56.25%] overflow-hidden h-full">
+
+      <section className="mt-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
+            Videos destacados
+          </h2>
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-black pt-[56.25%] shadow-sm dark:border-slate-800">
             <iframe
-              className="absolute inset-0 w-full h-full border-0"
+              className="absolute inset-0 h-full w-full border-0"
               src="https://www.youtube.com/embed/vhQzavbDAMw?si=xTOXMkSoorNhfw5r"
-              title="YouTube video player"
+              title="Video institucional de Lumi People"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
+              loading="lazy"
+            />
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {featuredPosts.slice(0, 2).map((post) => (
+              <BlogCard key={post.id} {...post} />
+            ))}
           </div>
         </div>
-        <BlogCard
-          imgSrc="/LumiPeopleArgentinaMining2024.webp"
-          title="Lumi People será sponsor Copper en Argentina Mining 2024 en Salta, Argentina"
-          text="Lumi People anuncia su participación como sponsor Copper en Argentina Mining 2024, un evento clave para la industria minera en Latinoamérica que se celebrará en Salta, Argentina."
-          id="lumipeople-sponsor-de-copper-en-argentina-mining"
-        />
-        <BlogCard
-          imgSrc="/ComoelaborarCV.webp"
-          title="Cómo Elaborar un Buen Currículum: Guía Completa"
-          text="Aprende como armar tu curriculum con expertos en el tema!"
-          id="como-elaborar-un-buen-curriculum"
-        />
 
-
-      </section>
-      {/* Articulos de mas abajo */}
-      <section className="grid grid-cols-2 md:grid-cols-3  container mx-auto gap-4 p-4 ">
-        <BlogCard
-          imgSrc="/EntrevistaVirtual.webp"
-          title="Cómo Prepararse para una Entrevista Virtual: Guía Completa"
-          text="Con la creciente tendencia del teletrabajo, las entrevistas virtuales se han convertido en una práctica común"
-          id="como-preparase-para-una-entrevista-virtual"
-        />
-
-        <BlogCard
-          imgSrc="/Networking.webp"
-          title="Cómo Realizar Networking: Guía Completa"
-          text="Descubre cómo realizar networking de manera efectiva y construir relaciones valiosas en tu industria. Desde definir tus objetivos hasta participar en eventos y mantener el contacto."
-          id="como-realizar-networking"
-        />
-        <BlogCard
-          imgSrc="/Redessocialestrabajo.webp"
-          title="¿En Qué Redes Sociales Buscan los Reclutadores?"
-          text="Descubre las principales redes sociales que utilizan los reclutadores y cómo puedes optimizar tu presencia en ellas para mejorar tus oportunidades de empleo."
-          id="en-que-redes-buscan-los-reclutadores"
-        />
-        <BlogCard
-          imgSrc="/HabilidadesHard.webp"
-          title="Las Habilidades Hard Más Valoradas en la Actualidad: Guía Completa"
-          text="Descubre las habilidades hard más demandadas en el entorno laboral actual y aprende cómo desarrollarlas para mejorar tu perfil profesional. Desde la programación y el análisis de datos hasta la ciberseguridad y la gestión de proyectos, esta guía te ofrece estrategias prácticas para adquirir competencias técnicas clave."
-          id="habilidades-hard"
-        />
-        <BlogCard
-          imgSrc="/HabilidadesSoft.webp"
-          title="Las Habilidades Soft Más Valoradas en la Actualidad: Guía Completa"
-          text="Descubre las habilidades soft más valoradas en el entorno laboral actual y aprende cómo desarrollarlas para destacarte en el mercado laboral. Desde la comunicación efectiva hasta el liderazgo, esta guía te ofrece estrategias prácticas para mejorar tus competencias interpersonales y cognitivas."
-          id="habilidades-soft"
-        />
-        <BlogCard
-          imgSrc="/Perfilesmasdemandados.webp"
-          title="Perfiles Más Demandados en la Industria de la Minería"
-          text="Explora los perfiles profesionales más demandados en la industria de la minería. Desde ingenieros y técnicos hasta profesionales en higiene, seguridad y recursos humanos, descubre las habilidades clave necesarias para destacar en este sector vital."
-          id="perfiles-mas-demandados-en-la-industria"
-        />
-        <div className="col-span-1 sm:col-span-2 lg:col-span-1 row-span-2 ">
-          <div className="relative pt-[56.25%] overflow-hidden h-full">
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
+            Más contenido
+          </h2>
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-black pt-[56.25%] shadow-sm dark:border-slate-800">
             <iframe
-              className="absolute inset-0 w-full h-full border-0"
+              className="absolute inset-0 h-full w-full border-0"
               src="https://www.youtube.com/embed/tG6i1Q4hOiY?si=KB32mnkwW5R0z__R"
-              title="YouTube video player"
+              title="Consejos laborales de Lumi People"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
+              loading="lazy"
+            />
           </div>
-        </div>
-        <div className="col-span-1 sm:col-span-2 lg:col-span-2 row-span-2 ">
-          <div className="relative pt-[56.25%] overflow-hidden h-full">
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-black pt-[56.25%] shadow-sm dark:border-slate-800">
             <iframe
-              className="absolute inset-0 w-full h-full border-0"
+              className="absolute inset-0 h-full w-full border-0"
               src="https://www.youtube.com/embed/P2v0UxmhUpw?si=yUVoy-W8jxqh-xms"
-              title="YouTube video player"
+              title="Entrevistas y oportunidades con Lumi People"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
+              loading="lazy"
+            />
           </div>
-
         </div>
-        <BlogCard
-          imgSrc="/EntrevistaPresencial.webp"
-          title="Cómo Prepararse para una Entrevista Presencial: Guía Completa"
-          text="Prepararse adecuadamente para una entrevista presencial es crucial para causar una buena impresión y aumentar tus posibilidades de obtener el empleo"
-          id="como-preparase-para-una-entrevista-presencial"
-        />
       </section>
 
-      {/* <section className="grid grid-cols-3 container mx-auto gap-4 p-4 font-bold">
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-        <div className="relative">
-          <BlogCard
-            imgSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            title="Como armar tu cv"
-            text="aprende como armar tu curriculum con expertos en el tema!"
-          />
-        </div>
-      </section> */}
-    </motion.div>
+      <section className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {featuredPosts.slice(2).map((post) => (
+          <BlogCard key={post.id} {...post} />
+        ))}
+      </section>
+    </div>
   );
 }

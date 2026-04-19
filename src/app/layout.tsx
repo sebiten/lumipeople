@@ -1,25 +1,71 @@
 import type { Metadata } from "next";
-import { Archivo_Narrow } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer/Footer";
 import Script from "next/script";
+import { Archivo_Narrow } from "next/font/google";
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/NavBar/NavBar";
+import { siteConfig } from "@/lib/site";
+import "./globals.css";
 
-const inter = Archivo_Narrow({
+const archivoNarrow = Archivo_Narrow({
   subsets: ["latin"],
   weight: "400",
 });
 
+const socialImage = "/LUMIPEOPLE_abril_24-26.jpg";
+
 export const metadata: Metadata = {
-  title: "Lumi People AR",
-  keywords:
-    "Recursos Humanos, soluciones innovadoras, atención personalizada, desarrollo de recursos humanos, servicios eficientes, capital humano, planeación de recursos humanos, satisfacción del cliente, integración de equipos, experiencia internacional.",
-  description:
-    "Lumi People se especializa en Recursos Humanos, ofreciendo soluciones innovadoras y atención personalizada para el desarrollo efectivo de equipos. Con una vasta experiencia nacional e internacional, estamos listos para satisfacer tus necesidades empresariales.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} | Recursos Humanos y Soluciones para Empresas en Salta`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.shortName,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/lumipeople.png",
+    shortcut: "/lumipeople.png",
+    apple: "/lumipeople.png",
   },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} | Recursos Humanos y Soluciones para Empresas en Salta`,
+    description: siteConfig.description,
+    images: [
+      {
+        url: socialImage,
+        alt: `${siteConfig.name} - consultora de recursos humanos en Salta`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Recursos Humanos y Soluciones para Empresas en Salta`,
+    description: siteConfig.description,
+    images: [socialImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "business",
+  referrer: "origin-when-cross-origin",
 };
 
 export default function RootLayout({
@@ -28,34 +74,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es-AR">
       <head>
         <link rel="icon" href="/lumipeople.png" type="image/png" />
         <Script
-          async
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-L4FMM9C2Q9"
-        ></Script>
-        <Script id="google-analytics">
+        />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-L4FMM9C2Q9');
-        `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L4FMM9C2Q9');
+          `}
         </Script>
       </head>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="overflow-hidden"> {children}</main>
-          <Footer />
-        </ThemeProvider>
+      <body className={`${archivoNarrow.className} min-h-screen antialiased`}>
+        <Navbar />
+        <main className="overflow-hidden">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,97 +1,97 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
-import { FaFacebook, FaLinkedin } from "react-icons/fa6";
-import { TiWeatherPartlySunny } from "react-icons/ti";
-import { ModeToggle } from "../mode-toggle";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { GiHamburgerMenu } from "react-icons/gi";
+import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Menu } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
-export const links = [
-  { href: "/", text: "Inicio", target: "_parent" },
-  {
-    href: "/noticias",
-    text: "Noticias",
-    target: "_self",
-  },
-  {
-    href: "/sobrenosotros",
-    text: "Sobre nosotros",
-  },
-  {
-    href: "/vacantes",
-    text: "¡Únete al equipo!",
-  },
+const links = [
+  { href: "/", text: "Inicio" },
+  { href: "/sobrenosotros", text: "Sobre nosotros" },
+  { href: "/noticias", text: "Noticias" },
+  { href: "/vacantes", text: "Vacantes" },
 ];
+
 export default function Navbar() {
   return (
-    <nav className="bg-inherit max-w-full mx-auto p-2 sticky top-0 z-50 ">
-      <div className="max-w-7xl flex flex-wrap justify-between items-center md:flex-nowrap mx-auto">
-        <div className="">
-          <Link
-            target="_parent"
-            href="/"
-            className="text-xl font-bold text-center font-title uppercase no-underline text-inherit md:pl-0"
-          >
-            <img
-              className="w-28 h-28 mx-auto"
-              src="/lumipeople.png"
-              alt="Logo"
-              loading="lazy"
+    <nav className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          aria-label="Ir al inicio de Lumi People"
+        >
+          <Image
+            src="/lumipeople.png"
+            alt="Logo de Lumi People"
+            width={85
 
-            />
+            }
+            height={85}
+            priority
+            className="h-16 w-16 rounded-xl object-contain"
+          />
+          <div className="hidden sm:block">
+
+
+          </div>
+        </Link>
+
+        <div className="hidden items-center gap-6 md:flex">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-slate-700 transition-colors hover:text-orange-500"
+            >
+              {link.text}
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden items-center gap-1 sm:flex">
+          <Link
+            href={siteConfig.social.instagram}
+            target="_blank"
+            aria-label="Instagram de Lumi People"
+            className="rounded-full p-2 text-slate-600 transition-colors hover:text-orange-500"
+          >
+            <Instagram size={18} />
+          </Link>
+          <Link
+            href={siteConfig.social.linkedin}
+            target="_blank"
+            aria-label="LinkedIn de Lumi People"
+            className="rounded-full p-2 text-slate-600 transition-colors hover:text-orange-500"
+          >
+            <Linkedin size={18} />
+          </Link>
+          <Link
+            href={siteConfig.social.facebook}
+            target="_blank"
+            aria-label="Facebook de Lumi People"
+            className="rounded-full p-2 text-slate-600 transition-colors hover:text-orange-500"
+          >
+            <Facebook size={18} />
           </Link>
         </div>
-        <div className="flex items-center justify-end md:order-1 gap-2">
-          <ModeToggle />
 
-          <ul className="hidden md:flex flex-row gap-4 list-none pl-4">
-            {links.map((link, index) => (
-              <li key={index} className="text-lg hover:text-lumiorange">
-                <Link href={link.href} target={link.target || ""}>
+        <details className="md:hidden">
+          <summary className="flex cursor-pointer list-none items-center rounded-xl border border-slate-200 p-2 text-slate-700 marker:content-none">
+            <Menu size={18} />
+          </summary>
+          <div className="absolute right-4 top-[84px] w-56 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
+            <div className="flex flex-col gap-1">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-orange-500"
+                >
                   {link.text}
                 </Link>
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex items-center justify-between md:hidden gap-2">
-            {/* Dropdown Menu for mobile */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline">
-                  <GiHamburgerMenu />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                {links.map((link, index) => (
-                  <Link key={index} href={link.href} target={link.target || ""}>
-                    <DropdownMenuLabel className="text-lg hover:text-lumiorange py-2 px-4">
-                      {link.text}
-                    </DropdownMenuLabel>
-                  </Link>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-2 ">
-            <Link  target="_blank" href="https://www.instagram.com/lumipeople.ar/" className="hover:text-lumiorange">
-              <FaInstagram size={22} />
-            </Link>
-            <Link target="_blank" href="https://ar.linkedin.com/company/lumi-people-ar" className="hover:text-lumiorange">
-              <FaLinkedin size={22} />
-            </Link>
-            <Link target="_blank" href="https://www.facebook.com/lumipeoplearg" className="hover:text-lumiorange">
-              <FaFacebook size={22} />
-            </Link>
-          </div>
-        </div>
+        </details>
       </div>
     </nav>
   );

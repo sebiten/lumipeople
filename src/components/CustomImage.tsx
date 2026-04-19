@@ -3,22 +3,20 @@ import Image from "next/image";
 type Props = {
   src: string;
   alt: string;
-  priority?: string;
+  priority?: boolean;
 };
 
 export default function CustomImage({ src, alt, priority }: Props) {
-  const prty = priority ? true : false;
-
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       <Image
         width={1920}
         height={1080}
         src={src}
         alt={alt}
-        quality={100}
-        priority={prty}
-        className="object-cover w-full h-[600px]  rounded-lg"
+        quality={90}
+        priority={priority}
+        className="h-auto w-full rounded-2xl object-cover"
       />
     </div>
   );

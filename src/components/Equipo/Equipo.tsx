@@ -1,143 +1,87 @@
-"use client";
-import React from "react";
-import { RiTeamFill } from "react-icons/ri";
-import { motion } from "framer-motion";
-import { FaLinkedin } from "react-icons/fa6";
+import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedinIn } from "react-icons/fa";
+import { Linkedin } from "lucide-react";
 
-interface IEquipoProps {}
+const team = [
+  {
+    name: "Mariano Nieva",
+    role: "Jefe de RRHH",
+    image: "/MarianoNieva.webp",
+    linkedin: "https://www.linkedin.com/in/mariano-gast%C3%B3n-nieva-32533442/",
+  },
+  {
+    name: "Celeste Castillo",
+    role: "Coordinación de Relaciones Laborales",
+    image: "/CelesteCastillo.webp",
+    linkedin: "https://www.linkedin.com/in/celestecastillorrhh/",
+  },
+  {
+    name: "Juan Carlos Monzón",
+    role: "Liquidación de sueldos",
+    image: "/JuanCarlos.webp",
+    linkedin: "https://www.linkedin.com/in/juan-carlos-monz%C3%B3n-14207016b/",
+  },
+  {
+    name: "Yael Romano",
+    role: "Administración de personal",
+    image: "/YaelRomano.webp",
+    linkedin: "https://www.linkedin.com/in/yaelromanohr/",
+  },
+];
 
 export default function Equipo() {
   return (
-    <section>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="py-8 px-4 mx-auto max-w-7xl lg:py-16 lg:px-6"
-      >
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 className="mb-4 mt-10 text-3xl tracking-tight font-extrabold border-b ">
-            Nuestro Equipo{" "}
-            <RiTeamFill className="inline-block text-lumiorange" />
-            <hr className="border-b border-lumiorange border-dotted mt-2" />
+    <section className="px-4 py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
+            Equipo
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-slate-50 md:text-4xl">
+            Profesionales que acompañan cada búsqueda y cada operación.
           </h2>
-          <p className="font-light text-gray-700 dark:text-gray-300 lg:mb-16 sm:text-xl">
-            Con un equipo diverso y comprometido, trabajamos en conjunto para
-            ofrecerte lo mejor en cada proyecto. Nuestra pasión por la
-            excelencia y la colaboración impulsa nuestro trabajo diario.
-            Descubre quiénes somos y cómo podemos ayudarte a alcanzar tus metas.
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+            Combinamos experiencia en recursos humanos, relaciones laborales y
+            administración para dar respuesta a necesidades concretas de cada
+            cliente.
           </p>
         </div>
-        <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-          <div className="items-center rounded-lg shadow sm:flex">
-            <a href="#">
-              <img
-                className="w-full h-96 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                src="/MarianoNieva.webp"
-                alt="Mariano Avatar"
-                loading="lazy"
-              />
-            </a>
-            <div className="p-5">
-              <h3 className="text-xl font-bold tracking-tight">
-                <p className="text-2xl">Mariano Nieva</p>
-              </h3>
-              <span className="text-lumiorange text-lg">Jefe de RRHH</span>
-              <ul className="flex space-x-4 sm:mt-0">
-                <Link
-                  className="mt-2"
-                  href="https://www.linkedin.com/in/mariano-gast%C3%B3n-nieva-32533442/"
-                >
-                  <FaLinkedin size={24} />
-                </Link>
-              </ul>
-            </div>
-          </div>
-          <div className="items-center rounded-lg shadow sm:flex">
-            <a href="#">
-              <img
-                className="w-full h-96 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                src="/CelesteCastillo.webp"
-                alt="Celeste Avatar"
-                loading="lazy"
-              />
-            </a>
-            <div className="p-5">
-              <h3 className="text-xl font-bold tracking-tight">
-                <p className="text-2xl">Celeste Castillo</p>
-              </h3>
-              <span className="text-lumiorange text-lg">
-                Coordinador de Relaciones Laborales
-              </span>
 
-              <ul className="flex space-x-4 sm:mt-0">
-                <Link
-                  className="mt-2"
-                  href="https://www.linkedin.com/in/celestecastillorrhh/"
-                >
-                  <FaLinkedin size={24} />
-                </Link>
-              </ul>
-            </div>
-          </div>
-          <div className="items-center rounded-lg shadow sm:flex">
-            <a href="#">
-              <img
-                className="w-full h-96 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                src="/JuanCarlos.webp"
-                loading="lazy"
-                alt="Juan Carlos Avatar"
-              />
-            </a>
-            <div className="p-5">
-              <h3 className="text-xl font-bold tracking-tight">
-                <p className="text-2xl">Juan Carlos Monzón</p>
-              </h3>
-              <span className="text-lumiorange text-lg">
-                Liquidación de Sueldos
-              </span>
-
-              <ul className="flex space-x-4 sm:mt-0">
-                <Link
-                  className="mt-2"
-                  href="https://www.linkedin.com/in/juan-carlos-monz%C3%B3n-14207016b/"
-                >
-                  <FaLinkedin size={24} />
-                </Link>
-              </ul>
-            </div>
-          </div>
-          <div className="items-center rounded-lg shadow sm:flex">
-            <a href="#">
-              <img
-                className="w-full h-96 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                src="/YaelRomano.webp"
-                alt="Yael Avatar"
-                loading="lazy"
-              />
-            </a>
-            <div className="p-5">
-              <h3 className="text-xl font-bold tracking-tight">
-                <p className="text-2xl">Yael Romano</p>
-              </h3>
-              <span className="text-lumiorange text-lg">
-                Administración de Personal
-              </span>
-
-              <ul className="flex space-x-4 sm:mt-0">
-                <Link
-                  className="mt-2"
-                  href="https://www.linkedin.com/in/yaelromanohr/"
-                >
-                  <FaLinkedin size={24} />
-                </Link>
-              </ul>
-            </div>
-          </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {team.map((member) => (
+            <article
+              key={member.name}
+              className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950"
+            >
+              <div className="grid sm:grid-cols-[220px_1fr]">
+                <div className="relative min-h-[320px]">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 30vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col justify-center p-6">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                    {member.name}
+                  </h3>
+                  <p className="mt-2 text-orange-500">{member.role}</p>
+                  <Link
+                    href={member.linkedin}
+                    target="_blank"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition-colors hover:text-orange-500 dark:text-slate-200"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    Ver perfil en LinkedIn
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

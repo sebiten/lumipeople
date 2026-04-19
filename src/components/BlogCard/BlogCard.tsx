@@ -1,37 +1,42 @@
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-interface IBlogCardProps {
+interface BlogCardProps {
   imgSrc: string;
   title: string;
   text: string;
   id: string;
 }
 
-const BlogCard: React.FC<IBlogCardProps> = ({ imgSrc, title, text, id }) => {
+export default function BlogCard({ imgSrc, title, text, id }: BlogCardProps) {
   return (
-    <article className="relative max-w-lg overflow-hidden rounded-lg shadow  transition hover:shadow-lg mt-4 md:mt-4 lg:m-0">
-     <Link href={`/articulo/${id}`}>
-      <img
-        alt=""
-        src={imgSrc}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-
-      <div className="relative bg-gradient-to-t from-gray-900/90 to-gray-900/35 h-full pt-32 sm:pt-48 lg:pt-64">
-        <div className="p-4 sm:p-6">
-          <a href="#">
-            <h3 className="mt-0.5 text-lg text-white font-bold">{title}</h3>
-          </a>
-
-          <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">{text}</p>
+    <article className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950">
+      <Link href={`/articulo/${id}`} className="block h-full">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <Image
+            src={imgSrc}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
         </div>
-      </div>
-     </Link>
 
+        <div className="space-y-3 p-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange-500">
+            Blog Lumi People
+          </p>
+          <h3 className="text-xl font-bold leading-snug text-slate-900 dark:text-slate-100">
+            {title}
+          </h3>
+          <p className="line-clamp-3 text-sm leading-6 text-muted-foreground">
+            {text}
+          </p>
+          <p className="text-sm font-semibold text-orange-500">
+            Leer artículo completo
+          </p>
+        </div>
+      </Link>
     </article>
   );
-};
-
-export default BlogCard;
+}
