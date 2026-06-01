@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Archivo_Narrow } from "next/font/google";
+import Script from "next/script";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/NavBar/NavBar";
+import { getSocialImageUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -11,12 +12,10 @@ const archivoNarrow = Archivo_Narrow({
   weight: "400",
 });
 
-const socialImage = "/LUMIPEOPLE_abril_24-26.jpg";
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Recursos Humanos y Soluciones para Empresas en Salta`,
+    default: "Recursos Humanos y Soluciones para Empresas en Salta",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -29,9 +28,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/lumipeople.png",
-    shortcut: "/lumipeople.png",
-    apple: "/lumipeople.png",
+    icon: siteConfig.brand.logoPath,
+    shortcut: siteConfig.brand.logoPath,
+    apple: siteConfig.brand.logoPath,
   },
   openGraph: {
     type: "website",
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: socialImage,
+        url: getSocialImageUrl(),
         alt: `${siteConfig.name} - consultora de recursos humanos en Salta`,
       },
     ],
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Recursos Humanos y Soluciones para Empresas en Salta`,
     description: siteConfig.description,
-    images: [socialImage],
+    images: [getSocialImageUrl()],
   },
   robots: {
     index: true,
@@ -73,20 +72,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = siteConfig.analytics.ga4MeasurementId;
+
   return (
-    <html lang="es-AR">
+    <html lang={siteConfig.language}>
       <head>
-        <link rel="icon" href="/lumipeople.png" type="image/png" />
+        <link rel="icon" href={siteConfig.brand.logoPath} type="image/png" />
         <Script
           strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-L4FMM9C2Q9"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
         />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-L4FMM9C2Q9');
+            gtag('config', '${gaId}');
           `}
         </Script>
       </head>

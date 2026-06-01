@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/lumipeople.png"
+              src={siteConfig.brand.logoPath}
               alt="Logo de Lumi People"
               width={72}
               height={72}

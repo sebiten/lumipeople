@@ -3,21 +3,29 @@ export const siteConfig = {
   shortName: "Lumi People AR",
   legalName: "Lumi People Argentina",
   description:
-    "Consultora de recursos humanos en Salta especializada en reclutamiento, outsourcing, administración de personal y soluciones integrales para empresas mineras, industriales y de servicios.",
+    "Consultora de recursos humanos en Salta especializada en reclutamiento, outsourcing, administracion de personal y soluciones integrales para empresas mineras, industriales y de servicios.",
   url: "https://www.lumipeoplearg.com",
   locale: "es_AR",
+  language: "es-AR",
+  analytics: {
+    ga4MeasurementId: "G-L4FMM9C2Q9",
+  },
+  brand: {
+    logoPath: "/lumipeople.png",
+    socialImagePath: "/LUMIPEOPLE_abril_24-26.jpg",
+  },
   keywords: [
     "recursos humanos en Salta",
     "consultora de recursos humanos",
     "reclutamiento en Salta",
-    "headhunting para minería",
+    "headhunting para mineria",
     "outsourcing de personal",
-    "administración de campamentos",
-    "catering para minería",
-    "logística de personal",
+    "administracion de campamentos",
+    "catering para mineria",
+    "logistica de personal",
     "vacantes en Salta",
     "RRHH para empresas mineras",
-    "selección de personal en Salta",
+    "seleccion de personal en Salta",
     "consultora de empleo en Salta",
   ],
   social: {
@@ -34,8 +42,18 @@ export const siteConfig = {
     region: "Salta",
     country: "AR",
   },
-};
+} as const;
 
 export function absoluteUrl(path = "/") {
   return new URL(path, siteConfig.url).toString();
 }
+
+export function canonicalPath(path = "/") {
+  return path === "/" ? "/" : path.replace(/\/$/, "");
+}
+
+export const socialLinks = [
+  { name: "Instagram", href: siteConfig.social.instagram },
+  { name: "LinkedIn", href: siteConfig.social.linkedin },
+  { name: "Facebook", href: siteConfig.social.facebook },
+] as const;

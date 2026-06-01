@@ -4,62 +4,26 @@ import Equipo from "@/components/Equipo/Equipo";
 import Hero from "@/components/Hero/Hero";
 import OpenPositions from "@/components/PosicionesAbiertas/OpenPositions";
 import Servicios from "@/components/Servicios/Services";
+import { buildPageMetadata, getOrganizationSchema } from "@/lib/seo";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
-const socialImage = "/LUMIPEOPLE_abril_24-26.jpg";
-
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Recursos Humanos en Salta para Empresas y Proyectos",
   description:
-    "Lumi People ofrece reclutamiento, outsourcing, administración de personal y soporte operativo para empresas en Salta, con foco en minería, industria y servicios.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Lumi People | Recursos Humanos en Salta para Empresas y Proyectos",
-    description:
-      "Consultora de recursos humanos en Salta especializada en reclutamiento, outsourcing, administración de personal y soluciones operativas.",
-    url: siteConfig.url,
-    images: [
-      {
-        url: socialImage,
-        alt: "Lumi People en Salta",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lumi People | Recursos Humanos en Salta",
-    description:
-      "Servicios de reclutamiento, outsourcing y administración de personal para empresas.",
-    images: [socialImage],
-  },
-};
+    "Lumi People ofrece reclutamiento, outsourcing, administracion de personal y soporte operativo para empresas en Salta, con foco en mineria, industria y servicios.",
+  path: "/",
+});
 
 const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${siteConfig.url}/#organization`,
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-      logo: absoluteUrl("/lumipeople.png"),
-      sameAs: Object.values(siteConfig.social),
-      description: siteConfig.description,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: siteConfig.location.city,
-        addressRegion: siteConfig.location.region,
-        addressCountry: siteConfig.location.country,
-      },
-    },
+    getOrganizationSchema(),
     {
       "@type": "WebSite",
       "@id": `${siteConfig.url}/#website`,
       url: siteConfig.url,
       name: siteConfig.name,
-      inLanguage: "es-AR",
+      inLanguage: siteConfig.language,
       publisher: {
         "@id": `${siteConfig.url}/#organization`,
       },
@@ -74,10 +38,11 @@ const homeSchema = {
       provider: {
         "@id": `${siteConfig.url}/#organization`,
       },
+      image: absoluteUrl(siteConfig.brand.socialImagePath),
       serviceType: [
-        "Reclutamiento y selección",
+        "Reclutamiento y seleccion",
         "Outsourcing de personal",
-        "Administración de personal",
+        "Administracion de personal",
         "Soporte operativo para empresas",
       ],
     },

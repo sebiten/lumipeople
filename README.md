@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lumi People
 
-## Getting Started
+Sitio institucional de Lumi People desarrollado con Next.js 14 y TypeScript. Es una web corporativa estatica con contenido institucional, blog en MDX, vacantes publicadas desde codigo y formularios externos para contacto y postulaciones.
 
-First, run the development server:
+## Stack
+
+- Next.js 14 App Router
+- React 18
+- TypeScript
+- Tailwind CSS
+- MDX con `next-mdx-remote`
+
+## Requisitos
+
+- Node.js 20 o superior
+- npm 10 o superior
+
+## Comandos
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app`: rutas, layout global, metadata routes y paginas
+- `src/components`: componentes de UI e institucionales
+- `src/lib/site.ts`: fuente de verdad para dominio, marca, redes, formularios y Analytics
+- `src/lib/vacancies.ts`: vacantes publicadas manualmente con vigencia
+- `src/lib/posts.ts`: lectura y validacion de posts MDX
+- `blogposts`: articulos del blog
+- `public`: assets estaticos
+- `docs/handoff.md`: checklist operativo de transferencia
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contenido
 
-## Learn More
+### Editar blog
 
-To learn more about Next.js, take a look at the following resources:
+Los articulos viven en `blogposts/*.mdx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Frontmatter obligatorio:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```md
+---
+title: "Titulo"
+date: "2024-01-31"
+description: "Resumen del articulo"
+imageUrl: "/imagen.webp"
+tags:
+  - empleo
+  - rrhh
+---
+```
 
-## Deploy on Vercel
+Si falta alguno de esos campos, `src/lib/posts.ts` descarta el articulo y registra el error.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Editar vacantes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Las vacantes viven en `src/lib/vacancies.ts`.
+
+Cada registro define:
+
+- `title`
+- `location`
+- `description`
+- `applyUrl`
+- `publishedAt`
+- `expiresAt` opcional
+
+Si `expiresAt` ya vencio, la vacante no se publica en `/vacantes`.
+
+## SEO y metadata
+
+- `src/app/sitemap.ts` genera el sitemap desde rutas publicas y articulos MDX.
+- `src/app/robots.ts` expone una sola sitemap canonical.
+- `src/lib/seo.ts` centraliza metadata base de paginas.
+- `src/app/articulo/[postId]/page.tsx` genera metadata y schema `Article` por post.
+
+## Operacion
+
+- Dominio canonico: `https://www.lumipeoplearg.com`
+- Deploy esperado: Vercel
+- Analytics: GA4 `G-L4FMM9C2Q9`
+- Formularios:
+  - Cotizacion: `https://forms.gle/RNC5Ez2DrXbjcqsW6`
+  - Vacantes/CV: `https://forms.gle/LWCkjmPSSLx9ZtWa7`
+
+## Variables de entorno
+
+Actualmente no hay variables de entorno requeridas para levantar el sitio.
+
+## Observaciones
+
+- El repo conserva `package-lock.json` y `pnpm-lock.yaml`. Si se decide estandarizar el gestor, conviene dejar uno solo.
+- No hay CI configurado en esta version. Como mejora futura, alcanza con una verificacion minima de instalacion y typecheck en GitHub Actions.

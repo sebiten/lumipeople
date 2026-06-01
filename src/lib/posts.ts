@@ -1,16 +1,56 @@
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import fs from "fs/promises";
 import path from "path";
+import type { ReactNode } from "react";
+import { compileMDX } from "next-mdx-remote/rsc";
 import grayMatter from "gray-matter";
-import { compileMDX, MDXRemoteProps } from "next-mdx-remote/rsc";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-import { Meta } from "../../types";
 import CustomImage from "@/components/CustomImage";
+import type { Meta } from "../../types";
+
+type Frontmatter = {
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  imageUrl: string;
+};
 
 type BlogPost = {
   meta: Meta;
-  content: any;
+  content: ReactNode;
 };
+
+function assertFrontmatter(
+  data: Record<string, unknown>,
+  fileName: string
+): Frontmatter {
+  const requiredFields: Array<keyof Frontmatter> = [
+    "title",
+    "date",
+    "description",
+    "tags",
+    "imageUrl",
+  ];
+
+  for (const field of requiredFields) {
+    if (data[field] === undefined || data[field] === null || data[field] === "") {
+      throw new Error(`Missing frontmatter field "${field}" in ${fileName}`);
+    }
+  }
+
+  if (!Array.isArray(data.tags) || data.tags.some((tag) => typeof tag !== "string")) {
+    throw new Error(`Invalid "tags" frontmatter in ${fileName}`);
+  }
+
+  return {
+    title: String(data.title),
+    date: String(data.date),
+    description: String(data.description),
+    tags: data.tags,
+    imageUrl: String(data.imageUrl),
+  };
+}
 
 export async function getPostByName(
   fileName: string
@@ -18,16 +58,19 @@ export async function getPostByName(
   try {
     const filePath = path.join(process.cwd(), "blogposts", fileName);
     const rawMDX = await fs.readFile(filePath, "utf-8");
-
-    // Use gray-matter to extract frontmatter
     const { data, content } = grayMatter(rawMDX);
+    const frontmatter = assertFrontmatter(
+      data as Record<string, unknown>,
+      fileName
+    );
 
-    const result = await compileMDX<MDXRemoteProps>({
+    const result = await compileMDX({
       source: content,
       components: {
         CustomImage,
       },
       options: {
+        parseFrontmatter: false,
         mdxOptions: {
           rehypePlugins: [
             rehypeSlug,
@@ -37,36 +80,21 @@ export async function getPostByName(
       },
     });
 
-    if (!result) {
-      console.error("Compilation failed for", fileName);
-      return undefined;
-    }
-
-    // Use the 'content' property for the rendered output
-    const renderedOutput = result.content || "";
-
-    if (!renderedOutput) {
-      console.error("Invalid result structure for", fileName);
-      return undefined;
-    }
-
     const id = fileName.replace(/\.mdx$/, "");
 
-    const blogPostObj: BlogPost = {
+    return {
       meta: {
         id,
-        title: data.title,
-        date: data.date,
-        description: data.description,
-        tags: data.tags || [],
-        imageUrl: data.imageUrl, // Access the imageUrl property from frontmatter
+        title: frontmatter.title,
+        date: frontmatter.date,
+        description: frontmatter.description,
+        tags: frontmatter.tags,
+        imageUrl: frontmatter.imageUrl,
       },
-      content: renderedOutput,
+      content: result.content,
     };
-
-    return blogPostObj;
   } catch (error) {
-    console.error("Error reading file:", error);
+    console.error("Error reading post:", fileName, error);
     return undefined;
   }
 }
@@ -75,20 +103,14 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
   try {
     const dirPath = path.join(process.cwd(), "blogposts");
     const filesArray = await getFilesInDirectory(dirPath, ".mdx");
+    const posts = await Promise.all(filesArray.map((file) => getPostByName(file)));
 
-    const posts: Meta[] = [];
-
-    for (const file of filesArray) {
-      const post = await getPostByName(file);
-      if (post) {
-        const { meta } = post;
-        posts.push(meta);
-      }
-    }
-
-    return posts.sort((a, b) =>
-      new Date(a.date).getTime() > new Date(b.date).getTime() ? -1 : 1
-    );
+    return posts
+      .filter((post): post is BlogPost => Boolean(post))
+      .map((post) => post.meta)
+      .sort((a, b) =>
+        new Date(a.date).getTime() > new Date(b.date).getTime() ? -1 : 1
+      );
   } catch (error) {
     console.error("Error fetching posts meta:", error);
     return undefined;

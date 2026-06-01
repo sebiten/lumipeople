@@ -1,16 +1,35 @@
 "use client";
 
 import React from "react";
-import { Button } from "../ui/button";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { BsPersonWorkspace } from "react-icons/bs";
 import {
   FaFacebookSquare,
   FaInstagramSquare,
   FaLinkedin,
 } from "react-icons/fa";
-import { BsPersonWorkspace } from "react-icons/bs";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { Button } from "../ui/button";
+import { siteConfig } from "@/lib/site";
+
+const socialItems = [
+  {
+    href: siteConfig.social.facebook,
+    icon: FaFacebookSquare,
+    label: "Facebook de Lumi People",
+  },
+  {
+    href: siteConfig.social.linkedin,
+    icon: FaLinkedin,
+    label: "LinkedIn de Lumi People",
+  },
+  {
+    href: siteConfig.social.instagram,
+    icon: FaInstagramSquare,
+    label: "Instagram de Lumi People",
+  },
+] as const;
 
 const Hero = () => {
   return (
@@ -21,33 +40,23 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="absolute -bottom-44 -left-72 gap-4 hidden lg:flex flex-col"
       >
-        <Link
-          target="_blank"
-          href="https://www.facebook.com/lumipeople"
-          className="text-lumiblue hover:text-lumiorange"
-        >
-          <motion.div whileHover={{ scale: 1.2 }}>
-            <FaFacebookSquare className="text-3xl" />
-          </motion.div>
-        </Link>
-        <Link
-          target="_blank"
-          href="https://ar.linkedin.com/company/lumi-people-ar"
-          className="text-lumiblue hover:text-lumiorange"
-        >
-          <motion.div whileHover={{ scale: 1.2 }}>
-            <FaLinkedin className="text-3xl" />
-          </motion.div>
-        </Link>
-        <Link
-          target="_blank"
-          href="https://www.instagram.com/lumipeople.ar/"
-          className="text-lumiblue hover:text-lumiorange"
-        >
-          <motion.div whileHover={{ scale: 1.2 }}>
-            <FaInstagramSquare className="text-3xl" />
-          </motion.div>
-        </Link>
+        {socialItems.map((item) => {
+          const Icon = item.icon;
+
+          return (
+            <Link
+              key={item.href}
+              target="_blank"
+              href={item.href}
+              aria-label={item.label}
+              className="text-lumiblue hover:text-lumiorange"
+            >
+              <motion.div whileHover={{ scale: 1.2 }}>
+                <Icon className="text-3xl" />
+              </motion.div>
+            </Link>
+          );
+        })}
       </motion.div>
 
       <motion.div
@@ -75,15 +84,15 @@ const Hero = () => {
           </motion.div>
           <img
             className="w-full h-full xl:h-96 mx-auto object-cover relative z-10"
-            src="/lumipeople.png"
+            src={siteConfig.brand.logoPath}
             alt="Lumi People"
             loading="eager"
           />
           <p className="font-light mb-5 text-lg sm:text-xl text-center relative z-10">
             En Lumi People, nos especializamos en brindar soluciones integrales
             que se adapten a las necesidades de tu empresa. Con un equipo
-            multicultural y una amplia experiencia, ofrecemos atención en tu
-            idioma y nos convertimos en tu socio estratégico para ayudarte a
+            multicultural y una amplia experiencia, ofrecemos atencion en tu
+            idioma y nos convertimos en tu socio estrategico para ayudarte a
             alcanzar tus objetivos.
           </p>
           <motion.div
@@ -92,45 +101,35 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex items-center justify-center gap-5 mb-6 lg:hidden relative z-10"
           >
-            <Link
-              target="_blank"
-              href="https://www.facebook.com/lumipeople"
-              className="text-lumiblue hover:text-lumiorange"
-            >
-              <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.96 }}>
-                <FaFacebookSquare className="text-3xl" />
-              </motion.div>
-            </Link>
-            <Link
-              target="_blank"
-              href="https://ar.linkedin.com/company/lumi-people-ar"
-              className="text-lumiblue hover:text-lumiorange"
-            >
-              <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.96 }}>
-                <FaLinkedin className="text-3xl" />
-              </motion.div>
-            </Link>
-            <Link
-              target="_blank"
-              href="https://www.instagram.com/lumipeople.ar/"
-              className="text-lumiblue hover:text-lumiorange"
-            >
-              <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.96 }}>
-                <FaInstagramSquare className="text-3xl" />
-              </motion.div>
-            </Link>
+            {socialItems.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <Link
+                  key={item.href}
+                  target="_blank"
+                  href={item.href}
+                  aria-label={item.label}
+                  className="text-lumiblue hover:text-lumiorange"
+                >
+                  <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.96 }}>
+                    <Icon className="text-3xl" />
+                  </motion.div>
+                </Link>
+              );
+            })}
           </motion.div>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center items-center sm:justify-center">
           <Link href="/sobrenosotros">
             <Button className="flex gap-2 w-full sm:w-auto text-lg font-normal bg-lumiorange shadow-xl">
-              ¿Quienes somos?
+              Quienes somos
               <IoMdInformationCircleOutline className="text-lumiblue" />
             </Button>
           </Link>
           <Link href="/vacantes">
             <Button className="flex gap-2 w-full sm:w-auto text-lg font-normal bg-lumiorange shadow-xl">
-              Trabaja con nosotros!
+              Trabaja con nosotros
               <BsPersonWorkspace className="text-lumiblue" />
             </Button>
           </Link>

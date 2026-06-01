@@ -20,7 +20,7 @@ export default function Navbar() {
           aria-label="Ir al inicio de Lumi People"
         >
           <Image
-            src="/lumipeople.png"
+            src={siteConfig.brand.logoPath}
             alt="Logo de Lumi People"
             width={85
 

@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import getFormattedDate from "@/lib/getFormattedDate";
 import { getPostByName, getPostsMeta } from "@/lib/posts";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 type Props = {
   params: {
@@ -20,35 +21,50 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params: { postId } }: Props) {
+export async function generateMetadata({
+  params: { postId },
+}: Props): Promise<Metadata> {
   const post = await getPostByName(`${postId}.mdx`);
 
   if (!post) {
     return {
-      title: "Artículo no encontrado",
-      description: "Este artículo no existe.",
+      title: "Articulo no encontrado",
+      description: "Este articulo no existe.",
     };
   }
 
+  const articleUrl = absoluteUrl(`/articulo/${postId}`);
+  const imageUrl = absoluteUrl(post.meta.imageUrl);
+
   return {
     title: post.meta.title,
-    description: post.meta.description || "",
+    description: post.meta.description,
     keywords: post.meta.tags,
     alternates: {
       canonical: `/articulo/${postId}`,
     },
+    authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
     openGraph: {
       type: "article",
-      url: absoluteUrl(`/articulo/${postId}`),
-      title: post.meta.title,
-      description: post.meta.description || "",
-      images: post.meta.imageUrl ? [absoluteUrl(String(post.meta.imageUrl))] : [],
+      url: articleUrl,
+      siteName: siteConfig.name,
+      title: `${post.meta.title} | ${siteConfig.name}`,
+      description: post.meta.description,
+      publishedTime: post.meta.date,
+      modifiedTime: post.meta.date,
+      authors: [siteConfig.legalName],
+      images: [
+        {
+          url: imageUrl,
+          alt: post.meta.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.meta.title,
-      description: post.meta.description || "",
-      images: post.meta.imageUrl ? [absoluteUrl(String(post.meta.imageUrl))] : [],
+      title: `${post.meta.title} | ${siteConfig.name}`,
+      description: post.meta.description,
+      images: [imageUrl],
     },
   };
 }
@@ -56,7 +72,9 @@ export async function generateMetadata({ params: { postId } }: Props) {
 export default async function Post({ params: { postId } }: Props) {
   const post = await getPostByName(`${postId}.mdx`);
 
-  if (!post) notFound();
+  if (!post) {
+    notFound();
+  }
 
   const { meta, content } = post;
   const pubDate = getFormattedDate(meta.date);
@@ -69,17 +87,18 @@ export default async function Post({ params: { postId } }: Props) {
     datePublished: meta.date,
     dateModified: meta.date,
     mainEntityOfPage: absoluteUrl(`/articulo/${postId}`),
-    image: meta.imageUrl ? [absoluteUrl(String(meta.imageUrl))] : [],
+    image: [absoluteUrl(meta.imageUrl)],
     author: {
       "@type": "Organization",
-      name: "Lumi People",
+      name: siteConfig.legalName,
+      url: siteConfig.url,
     },
     publisher: {
       "@type": "Organization",
-      name: "Lumi People",
+      name: siteConfig.legalName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/lumipeople.png"),
+        url: absoluteUrl(siteConfig.brand.logoPath),
       },
     },
     keywords: meta.tags,
@@ -113,7 +132,7 @@ export default async function Post({ params: { postId } }: Props) {
       </div>
       <p className="my-10 text-xl font-semibold">
         <Link className="text-orange-500" href="/noticias">
-          ← Volver a noticias
+          Volver a noticias
         </Link>
       </p>
     </div>

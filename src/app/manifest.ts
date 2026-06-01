@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#f97316",
     icons: [
       {
-        src: "/lumipeople.png",
+        src: siteConfig.brand.logoPath,
         sizes: "512x512",
         type: "image/png",
       },
