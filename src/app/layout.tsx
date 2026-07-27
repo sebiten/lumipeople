@@ -91,7 +91,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${archivoNarrow.className} min-h-screen antialiased`}>
+      <body className={`${archivoNarrow.className} mt-20 antialiased`}>
         <Navbar />
         <main className="overflow-hidden">{children}</main>
         <Footer />
