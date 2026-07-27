@@ -1,3 +1,4 @@
+"use client"
 import type { Metadata } from "next";
 import { Archivo_Narrow } from "next/font/google";
 import Script from "next/script";
@@ -94,7 +95,7 @@ export default function RootLayout({
       <body className={`${archivoNarrow.className} min-h-screen antialiased`}>
         <Navbar />
         <main className="overflow-hidden">{children}</main>
-        <Footer />
+         <Footer />
       </body>
     </html>
   );
