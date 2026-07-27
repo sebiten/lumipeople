@@ -1,4 +1,3 @@
-"use client"
 import type { Metadata } from "next";
 import { Archivo_Narrow } from "next/font/google";
 import Script from "next/script";
