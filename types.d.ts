@@ -1,5 +1,4 @@
 import type { ReactElement, JSXElementConstructor } from "react";
-import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export type Meta = {
   id: string;
@@ -7,7 +6,7 @@ export type Meta = {
   date: string;
   tags: string[];
   description: string;
-  imageUrl: string | StaticImport;
+  imageUrl: string;
 };
 
 export type BlogPost = {
